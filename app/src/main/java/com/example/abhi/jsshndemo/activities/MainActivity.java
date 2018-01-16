@@ -1,4 +1,4 @@
-package com.example.abhi.jsshndemo;
+package com.example.abhi.jsshndemo.activities;
 
 
 import android.annotation.SuppressLint;
@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 
+import com.example.abhi.jsshndemo.R;
 import com.example.abhi.jsshndemo.fragments.EventsFragment;
 import com.example.abhi.jsshndemo.fragments.HomeFragment;
 import com.example.abhi.jsshndemo.fragments.RegisterFragment;
