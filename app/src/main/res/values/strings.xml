@@ -1,5 +1,9 @@
 <resources>
-    <string name="app_name">JSSHN demo</string>
+    <string name="app_name">ZEALICON-18</string>
+    <string name="FestName">ZEALICON-18</string>
+    <string name="balance_currency">$</string>
+    <string name="balance_amount">524.99</string>
+
 
     <!-- bottom bar names-->
     <string name="home">Home</string>

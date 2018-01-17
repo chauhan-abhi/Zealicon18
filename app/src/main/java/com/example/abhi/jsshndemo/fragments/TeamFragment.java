@@ -9,12 +9,9 @@ import android.view.ViewGroup;
 import com.example.abhi.jsshndemo.R;
 
 
-public class EventsFragment extends Fragment {
-
-
-    public static Fragment newInstance() {
-        EventsFragment fragment = new EventsFragment();
-
+public class TeamFragment extends Fragment {
+    public static android.app.Fragment newInstance() {
+        TeamFragment fragment = new TeamFragment();
         return fragment;
     }
 
@@ -28,6 +25,8 @@ public class EventsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_events, container, false);
+        return inflater.inflate(R.layout.fragment_home, container, false);
     }
+
+
 }
