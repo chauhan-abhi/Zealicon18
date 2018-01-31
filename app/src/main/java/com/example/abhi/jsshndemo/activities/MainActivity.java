@@ -58,6 +58,8 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
     private SlidingRootNav slidingRootNav;
     private BottomNavigationView mBottomNav;
 
+    private Fragment selectedFragment=null;
+
 
 
     @Override
@@ -112,36 +114,36 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
             finish();
         }
         slidingRootNav.closeMenu();
-        Fragment nselectedFragment=null;
+        //Fragment nselectedFragment=null;
         switch (position){
             case POS_HOME:
-                nselectedFragment= HomeFragment.newInstance();
+                selectedFragment= HomeFragment.newInstance();
                 Log.v(TAG,"Home Fragment Selected");
                 break;
             case POS_EVENTS:
-                nselectedFragment=EventsFragment.newInstance();
+                selectedFragment=EventsFragment.newInstance();
                 Log.v(TAG,"Event Fragment Selected");
                 break;
             case POS_SCHEDULE:
-                nselectedFragment= ScheduleFragment.newInstance();
+                selectedFragment= ScheduleFragment.newInstance();
                 Log.v(TAG,"Schedule Fragment Selected");
                 break;
             case POS_CONTACT:
-                nselectedFragment= ContactFragment.newInstance();
+                selectedFragment= ContactFragment.newInstance();
                 Log.v(TAG,"Contact Fragment Selected");
                 break;
             case POS_SPONSORS:
-                nselectedFragment= SponsorsFragment.newInstance();
+                selectedFragment= SponsorsFragment.newInstance();
                 Log.v(TAG,"Sponsors Fragment Selected");
                 break;
             case POS_TEAM:
-                nselectedFragment = TeamFragment.newInstance();
+                selectedFragment = TeamFragment.newInstance();
                 Log.v(TAG,"Team Fragment Selected");
                 break;
 
         }
         if(position!=POS_EXIT){
-            showFragment(nselectedFragment,position);
+            showFragment(selectedFragment,position);
 
         }
        // Fragment selectedScreen = CenteredTextFragment.createFor(screenTitles[position]);
@@ -199,7 +201,7 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         mBottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Fragment selectedFragment=null;
+                //Fragment selectedFragment=null;
                 int position=0;
                 switch (item.getItemId()){
                     case R.id.home:
