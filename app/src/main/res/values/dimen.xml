@@ -21,4 +21,8 @@
     <dimen name="header_avatar_size">45dp</dimen>
     <dimen name="header_icon_size">14dp</dimen>
 
+<!--Register Fragment -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
 </resources>

@@ -1,7 +1,9 @@
 package com.example.abhi.jsshndemo.fragments;
 
 import android.os.Bundle;
-import android.app.Fragment;
+//import android.app.Fragment;
+
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +16,6 @@ public class EventsFragment extends Fragment {
 
     public static Fragment newInstance() {
         EventsFragment fragment = new EventsFragment();
-
         return fragment;
     }
 

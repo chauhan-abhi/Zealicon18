@@ -2,7 +2,9 @@ package com.example.abhi.jsshndemo.activities;
 
 
 import android.annotation.SuppressLint;
-import android.app.Fragment;
+//import android.app.Fragment;
+import android.support.v4.app.Fragment;
+
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.ColorInt;
@@ -32,7 +34,6 @@ import com.example.abhi.jsshndemo.fragments.TeamFragment;
 import com.example.abhi.jsshndemo.menu.DrawerAdapter;
 import com.example.abhi.jsshndemo.menu.DrawerItem;
 import com.example.abhi.jsshndemo.menu.SimpleItem;
-import com.example.abhi.jsshndemo.menu.SpaceItem;
 import com.yarolegovich.slidingrootnav.SlidingRootNav;
 import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
 
@@ -154,7 +155,7 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         //Fragment current= getFragmentManager().findFragmentById(R.id.frame_layout);
         if(POS_CURRENT!=position){
         POS_CURRENT=position;
-        getFragmentManager().beginTransaction()
+        getSupportFragmentManager().beginTransaction()
                 .replace(R.id.frame_layout, fragment)
                 .commit();
         }
