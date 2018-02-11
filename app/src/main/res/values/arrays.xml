@@ -2,7 +2,7 @@
 <resources>
     <string-array name="ld_activityScreenTitles">
         <item>Home</item>
-        <item>Events</item>
+        <item>Info</item>
         <item>Schedule</item>
         <item>Contact</item>
         <item>Sponsors</item>

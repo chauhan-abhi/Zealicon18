@@ -34,6 +34,8 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.8.1'
     //sliding navingation bar
     compile 'com.yarolegovich:sliding-root-nav:1.1.0'
+    //coordinator tab layout
+    compile 'cn.hugeterry.coordinatortablayout:coordinatortablayout:1.2.2'
 
 
     compile project(path: ':garland-view')

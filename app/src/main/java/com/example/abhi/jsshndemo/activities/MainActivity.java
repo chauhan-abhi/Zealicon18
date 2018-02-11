@@ -2,7 +2,6 @@ package com.example.abhi.jsshndemo.activities;
 
 
 import android.annotation.SuppressLint;
-//import android.app.Fragment;
 import android.support.v4.app.Fragment;
 
 import android.content.res.TypedArray;
@@ -25,7 +24,7 @@ import android.view.MenuItem;
 
 import com.example.abhi.jsshndemo.R;
 import com.example.abhi.jsshndemo.fragments.ContactFragment;
-import com.example.abhi.jsshndemo.fragments.EventsFragment;
+import com.example.abhi.jsshndemo.fragments.InfoFragment;
 import com.example.abhi.jsshndemo.fragments.HomeFragment;
 import com.example.abhi.jsshndemo.fragments.RegisterFragment;
 import com.example.abhi.jsshndemo.fragments.ScheduleFragment;
@@ -45,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
 
     private String TAG;
     private static final int POS_HOME = 0;
-    private static final int POS_EVENTS = 1;
+    private static final int POS_INFO = 1;
     private static final int POS_SCHEDULE = 2;
     private static final int POS_CONTACT = 3;
     private static final int POS_SPONSORS = 4;
@@ -87,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
 
         DrawerAdapter adapter = new DrawerAdapter(Arrays.asList(
                 createItemFor(POS_HOME).setChecked(true),
-                createItemFor(POS_EVENTS),
+                createItemFor(POS_INFO),
                 createItemFor(POS_SCHEDULE),
                 createItemFor(POS_CONTACT),
                 createItemFor(POS_SPONSORS),
@@ -121,9 +120,9 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
                 selectedFragment= HomeFragment.newInstance();
                 Log.v(TAG,"Home Fragment Selected");
                 break;
-            case POS_EVENTS:
-                selectedFragment=EventsFragment.newInstance();
-                Log.v(TAG,"Event Fragment Selected");
+            case POS_INFO:
+                selectedFragment= InfoFragment.newInstance();
+                Log.v(TAG,"Info Fragment Selected");
                 break;
             case POS_SCHEDULE:
                 selectedFragment= ScheduleFragment.newInstance();
@@ -198,7 +197,7 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
      * Bottom Navoigation Implementation
      */
     public void initBottomNavigation(){
-        mBottomNav=(BottomNavigationView)findViewById(R.id.bottom_navigation);
+        mBottomNav=findViewById(R.id.bottom_navigation);
         mBottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -210,10 +209,10 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
                         selectedFragment= HomeFragment.newInstance();
                         Log.v(TAG,"Home Fragment Selected");
                         break;
-                    case R.id.events:
+                    case R.id.info:
                         position=1;
-                        selectedFragment=EventsFragment.newInstance();
-                        Log.v(TAG,"Event Fragment Selected");
+                        selectedFragment= InfoFragment.newInstance();
+                        Log.v(TAG,"Info Fragment Selected");
                         break;
                     case R.id.schedule:
                         position=2;

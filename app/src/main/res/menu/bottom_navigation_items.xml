@@ -7,9 +7,9 @@
         android:title="@string/home"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/events"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/events"
+        android:id="@+id/info"
+        android:icon="@drawable/ic_info_black_24dp"
+        android:title="@string/info"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/schedule"

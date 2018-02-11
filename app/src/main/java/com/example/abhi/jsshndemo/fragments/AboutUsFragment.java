@@ -1,8 +1,6 @@
 package com.example.abhi.jsshndemo.fragments;
 
 import android.os.Bundle;
-//import android.app.Fragment;
-
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,11 +9,10 @@ import android.view.ViewGroup;
 import com.example.abhi.jsshndemo.R;
 
 
-public class EventsFragment extends Fragment {
+public class AboutUsFragment extends Fragment {
 
-
-    public static Fragment newInstance() {
-        EventsFragment fragment = new EventsFragment();
+    public static AboutUsFragment newInstance() {
+        AboutUsFragment fragment = new AboutUsFragment();
         return fragment;
     }
 
@@ -29,6 +26,8 @@ public class EventsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_events, container, false);
+        return inflater.inflate(R.layout.fragment_about_us, container, false);
     }
+
+
 }
