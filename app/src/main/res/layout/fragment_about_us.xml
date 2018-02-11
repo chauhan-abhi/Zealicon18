@@ -4,10 +4,68 @@
     android:layout_height="match_parent"
     tools:context="com.example.abhi.jsshndemo.fragments.AboutUsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
+        <!-- TODO: Update blank fragment layout -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="t
+t
+t
+t
+t
+t
+t
+t
+dsf
+asd
+das
+d
+asd
+sadsa
+sa
+das
+dsa
+das
+da
+das
+dsa
+sa
+dsa
+das
+dd
+asd
+d
 
+dad
+asd
+asd
+ad
+adas
+da
+sd
+adas
+das
+da
+da
+das
+das
+das
+dad
+ad
+ad
+ad
+ad
+asd
+aa
+da
+d
+ad
+" />
+
+    </ScrollView>
 </FrameLayout>

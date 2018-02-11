@@ -2,11 +2,13 @@ package com.example.abhi.jsshndemo.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.abhi.jsshndemo.R;
@@ -22,7 +24,7 @@ import java.util.List;
 public class MainFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
-    private TextView mdesc_about;
+    private NestedScrollView scrollView;
 
     private List<String> mDatas;
     private static final String ARG_TITLE = "title";
@@ -47,16 +49,27 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_main, container, false);
         mRecyclerView = v.findViewById(R.id.recyclerview);
-        initData();
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(mRecyclerView.getContext()));
-        mRecyclerView.setAdapter(new RecyclerAdapter(mRecyclerView.getContext(), mDatas));
+        scrollView = v.findViewById(R.id.scrollView);
+        if(mTitle.equals("About"))
+        {
+            mRecyclerView.setVisibility(View.GONE);
+            scrollView.setVisibility(View.VISIBLE);
+        }
+        else{
+            mRecyclerView.setVisibility(View.VISIBLE);
+            scrollView.setVisibility(View.GONE);
+            initData();
+            mRecyclerView.setLayoutManager(new LinearLayoutManager(mRecyclerView.getContext()));
+            mRecyclerView.setAdapter(new RecyclerAdapter(mRecyclerView.getContext(), mDatas));
+
+        }
 
         return v;
     }
 
     private void initData() {
         mDatas = new ArrayList<>();
-        for (int i = 'A'; i < 'z'; i++) {
+        for (int i = 'A'; i < 'H'; i++) {
             mDatas.add(mTitle + (char) i);
         }
     }

@@ -1,14 +1,12 @@
 package com.example.abhi.jsshndemo.fragments;
 
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.abhi.jsshndemo.R;
 import com.example.abhi.jsshndemo.recyclerview.adapters.MyPagerAdapter;
@@ -22,10 +20,12 @@ public class InfoFragment extends Fragment {
 
     private CoordinatorTabLayout mCoordinatorTabLayout;
     private int[] mImageArray, mColorArray;
-    private ArrayList<Fragment> mFragments;
-    private final String[] mTitles = {"Developer", "Team", "Sponsors"};
+
+
+    private final String[] mTitles = {"Developer", "Team", "Sponsors", "About" };
 
     private ViewPager mViewPager;
+    private ArrayList<Fragment> mFragments;
 
     public static Fragment newInstance() {
         InfoFragment fragment = new InfoFragment();
@@ -35,14 +35,17 @@ public class InfoFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //Log.v("Info",mTitles.length+"");
         initFragments();
 
         //4 image drawables
         mImageArray = new int[]{
                 R.drawable.bg_android,
                 R.drawable.bg_android,
+                R.drawable.bg_android,
                 R.drawable.bg_android};
         mColorArray = new int[]{
+                android.R.color.holo_blue_light,
                 android.R.color.holo_blue_light,
                 android.R.color.holo_blue_light,
                 android.R.color.holo_blue_light};
@@ -57,7 +60,7 @@ public class InfoFragment extends Fragment {
     }
 
     private void initViewPager(ViewPager mViewPager) {
-        mViewPager.setOffscreenPageLimit(3);
+        mViewPager.setOffscreenPageLimit(4);
         mViewPager.setAdapter(new MyPagerAdapter(getActivity().getSupportFragmentManager(),mFragments,mTitles));
     }
 
