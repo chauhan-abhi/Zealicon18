@@ -1,8 +1,6 @@
 package com.example.abhi.jsshndemo.recyclerview.adapters;
 
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
+
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -11,13 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 import com.example.abhi.jsshndemo.R;
-import com.example.abhi.jsshndemo.fragments.DeveloperFragment;
 import com.example.abhi.jsshndemo.model.Developer;
-import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by abhi on 15/2/18.
