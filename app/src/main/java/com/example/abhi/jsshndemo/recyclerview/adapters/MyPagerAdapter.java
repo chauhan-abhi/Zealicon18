@@ -11,12 +11,11 @@ import java.util.ArrayList;
 
 public class MyPagerAdapter extends FragmentStatePagerAdapter {
     private ArrayList<Fragment> mFragments = new ArrayList<>();
-    private final String[] mTitles;
+    private final String[] mTitles={"Team","Developers","Sponsors","About"};
 
-    public MyPagerAdapter(FragmentManager fm, ArrayList<Fragment> mFragments, String[] mTitles) {
+    public MyPagerAdapter(FragmentManager fm, ArrayList<Fragment> mFragments) {
         super(fm);
         this.mFragments = mFragments;
-        this.mTitles = mTitles;
     }
 
     @Override

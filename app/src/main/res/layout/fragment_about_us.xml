@@ -1,71 +1,39 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.abhi.jsshndemo.fragments.AboutUsFragment">
+    android:padding="10dp">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <!-- TODO: Update blank fragment layout -->
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="t
-t
-t
-t
-t
-t
-t
-t
-dsf
-asd
-das
-d
-asd
-sadsa
-sa
-das
-dsa
-das
-da
-das
-dsa
-sa
-dsa
-das
-dd
-asd
-d
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/delius"
+            android:padding="10dp"
+            android:text="@string/about_effe"
+            android:textSize="18sp" />
 
-dad
-asd
-asd
-ad
-adas
-da
-sd
-adas
-das
-da
-da
-das
-das
-das
-dad
-ad
-ad
-ad
-ad
-asd
-aa
-da
-d
-ad
-" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/aref_ruqaa"
+            android:text="Contact Us:"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-    </ScrollView>
-</FrameLayout>
+
+
+
+    </LinearLayout>
+
+
+
+</android.support.v4.widget.NestedScrollView>

@@ -46,9 +46,9 @@ public class MainActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_main);
         TAG = getClass().getSimpleName();
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        /*Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+*/
         initBottomNavigation();
 
     }
