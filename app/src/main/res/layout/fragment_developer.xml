@@ -2,12 +2,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.abhi.jsshndemo.fragments.SponsorsFragment">
+    tools:context="com.example.abhi.jsshndemo.fragments.DeveloperFragment">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/sponsor_rv"
+        android:id="@+id/developer_rv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
+        android:layout_height="match_parent"
+        />
 </FrameLayout>
-

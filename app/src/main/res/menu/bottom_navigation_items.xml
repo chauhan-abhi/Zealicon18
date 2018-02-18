@@ -6,11 +6,7 @@
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/home"
         app:showAsAction="ifRoom" />
-    <item
-        android:id="@+id/info"
-        android:icon="@drawable/ic_info_black_24dp"
-        android:title="@string/info"
-        app:showAsAction="ifRoom" />
+
     <item
         android:id="@+id/schedule"
         android:icon="@mipmap/ic_access_time_black_24dp"
@@ -20,6 +16,11 @@
         android:id="@+id/register"
         android:icon="@drawable/registration"
         android:title="@string/register"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/info"
+        android:icon="@drawable/ic_info_black_24dp"
+        android:title="@string/info"
         app:showAsAction="ifRoom" />
 
 </menu>
