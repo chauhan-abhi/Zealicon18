@@ -11,11 +11,19 @@ public class Developer {
   private String position;
   private String gitHub;
 
+  //Constructor for Developer and Team members
   public Developer(String name, String imgurl, String position, String gitHub) {
     this.name = name;
     this.imgurl = imgurl;
     this.position = position;
     this.gitHub = gitHub;
+  }
+
+  //Constructor for sponsors
+  public Developer(String sponsorName,String imgurl,String category){
+    this.name = sponsorName;
+    this.imgurl = imgurl;
+    this.position = category;
   }
 
   public String getName() {
