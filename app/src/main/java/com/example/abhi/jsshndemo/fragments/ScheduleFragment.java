@@ -36,7 +36,6 @@ public class ScheduleFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         for(int i=0;i<OUTER_COUNT;i++){
             List<InnerData> innerData = new ArrayList<>();
             innerData.add(new InnerData("CODERZ","12:00","AB1","March 13, 2018"));
@@ -49,8 +48,6 @@ public class ScheduleFragment extends Fragment {
 
             outerData.add(innerData);
         }
-
-
     }
 
     @Override
