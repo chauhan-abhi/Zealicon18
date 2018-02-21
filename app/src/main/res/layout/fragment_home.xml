@@ -1,14 +1,52 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.abhi.jsshndemo.fragments.HomeFragment">
+    tools:context="com.example.abhi.jsshndemo.fragments.HomeFragment"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+  <android.support.design.widget.AppBarLayout
+      android:id="@+id/appbar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:fitsSystemWindows="true"
+      android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+      tools:layout_editor_absoluteY="2dp">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="HomeFragment" />
+        android:layout_height="56dp"
+        android:background="@color/toolbar"
+        android:fitsSystemWindows="true"
+        app:layout_collapseMode="pin"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        >
 
-</FrameLayout>
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:layout_marginStart="10dp"
+          android:fontFamily="@font/aref_ruqaa"
+          android:text="Home"
+          android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+          android:textStyle="bold"
+          />
+
+    </android.support.v7.widget.Toolbar>
+  </android.support.design.widget.AppBarLayout>
+
+  <!-- TODO: Update blank fragment layout -->
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:fontFamily="@font/aref_ruqaa"
+      android:gravity="center"
+      android:text="HomeFragment"
+      android:textColor="@android:color/holo_blue_bright"
+      android:textSize="18sp"
+      />
+
+</android.support.design.widget.CoordinatorLayout>

@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     tools:context="com.example.abhi.jsshndemo.fragments.RegisterFragment"
     >
     <android.support.design.widget.AppBarLayout
@@ -18,8 +17,8 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:background="?android:attr/colorPrimary"
+            android:layout_height="56dp"
+            android:background="@color/toolbar"
             android:fitsSystemWindows="true"
             app:layout_collapseMode="pin"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
@@ -32,6 +31,7 @@
                 android:fontFamily="@font/antic"
                 android:text="Ticket to Reilive"
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                android:textStyle="bold"
                 />
 
         </android.support.v7.widget.Toolbar>
@@ -41,27 +41,30 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorAccent">
+            android:background="@color/colorAccent"
+            >
 
             <ImageView
+                android:id="@+id/profile_pic"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_centerHorizontal="true"
-                android:id="@+id/profile_pic"/>
+                />
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/nameWrapper"
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp"
-                android:background="#55000000"
                 android:layout_below="@+id/profile_pic"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#55000000"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 >
@@ -82,21 +85,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/nameWrapper"
-                android:layout_marginTop="4dp"
-                android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="4dp"
                 android:background="#55000000"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin"
-                android:weightSum="100">
+                android:weightSum="100"
+                >
 
                 <EditText
                     android:id="@+id/email"
-                    android:focusableInTouchMode="true"
-                    android:inputType="textEmailAddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusableInTouchMode="true"
                     android:hint="Email"
+                    android:inputType="textEmailAddress"
                     android:textStyle="bold"
                     />
 
@@ -108,21 +112,23 @@
 
                 android:layout_height="wrap_content"
                 android:layout_below="@id/emailWrapper"
-                android:layout_marginTop="4dp"
-                android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="4dp"
                 android:background="#55000000"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin">
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                >
 
                 <EditText
                     android:id="@+id/contact"
-                    android:inputType="phone"
-                    android:focusableInTouchMode="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusableInTouchMode="true"
                     android:hint="Contact"
-                    android:textStyle="bold"/>
+                    android:inputType="phone"
+                    android:textStyle="bold"
+                    />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -131,112 +137,113 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/contactWrapper"
-                android:layout_marginTop="4dp"
-                android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="4dp"
                 android:background="#55000000"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin">
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                >
 
                 <EditText
                     android:id="@+id/college"
-                    android:inputType="text"
-                    android:focusableInTouchMode="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:focusableInTouchMode="true"
                     android:hint="College"
-                    android:textStyle="bold"/>
+                    android:inputType="text"
+                    android:textStyle="bold"
+                    />
 
             </android.support.design.widget.TextInputLayout>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/coursetext"
-                android:text="Course"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/collegeWrapper"
-                android:textSize="20dp"
-                android:layout_marginTop="8dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="5dp"
-                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:text="Course"
                 android:textColor="#ECEFF1"
+                android:textSize="20dp"
+                android:textStyle="bold"
                 />
             <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:id="@+id/course"
-                android:layout_below="@+id/coursetext"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp"
-                />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/branchtext"
-                android:layout_below="@id/course"
-                android:text="Branch"
-                android:textSize="20dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:textStyle="bold"
-                android:textColor="#ECEFF1"
-                />
-            <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/branch"
-                android:layout_below="@+id/branchtext"
-                android:layout_marginTop="8dp"
+                android:layout_below="@+id/coursetext"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
+                android:layout_marginTop="8dp"
+                />
+
+
+            <TextView
+                android:id="@+id/branchtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/course"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="8dp"
+                android:text="Branch"
+                android:textColor="#ECEFF1"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                />
+            <Spinner
+                android:id="@+id/branch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/branchtext"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="8dp"
 
                 />
 
 
-
             <TextView
+                android:id="@+id/yeartext"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/yeartext"
                 android:layout_below="@id/branch"
-                android:text="Year"
-                android:textSize="20dp"
-                android:layout_marginTop="8dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="5dp"
-                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:text="Year"
                 android:textColor="#ECEFF1"
+                android:textSize="20dp"
+                android:textStyle="bold"
                 />
 
             <Spinner
+                android:id="@+id/year"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/year"
-                android:layout_marginTop="6dp"
                 android:layout_below="@+id/yeartext"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
+                android:layout_marginTop="6dp"
                 />
 
             <Button
                 android:id="@+id/register"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
-                android:text="REGISTER"
-                android:textSize="16sp"
-                android:textColor="#FFFFFF"
-                android:fontFamily="sans-serif-medium"
-                android:layout_marginTop="20dp"
+                android:layout_below="@+id/year"
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="center_horizontal"
-                android:layout_below="@+id/year"
                 android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
                 android:background="#36516A"
+                android:fontFamily="sans-serif-medium"
+                android:text="REGISTER"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
                 />
         </RelativeLayout>
     </ScrollView>

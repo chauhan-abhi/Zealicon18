@@ -42,7 +42,7 @@ public class OuterItem extends HeaderItem {
     private final View mHeader;
     private final View mHeaderAlpha;
 
-    private final InnerRecyclerView mRecyclerView;
+    private InnerRecyclerView mRecyclerView;
 
     //private final ImageView mAvatar;
     //private final TextView mHeaderCaption1;
