@@ -18,6 +18,7 @@
     <activity
         android:name=".activities.MainActivity"
         android:label="Zealicon18"
+        android:windowSoftInputMode="adjustPan"
         android:screenOrientation="portrait"
         android:theme="@style/AppTheme.NoActionBar">
     </activity>
