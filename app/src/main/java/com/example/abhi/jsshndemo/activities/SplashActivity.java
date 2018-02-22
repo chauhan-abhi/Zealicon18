@@ -1,0 +1,39 @@
+package com.example.abhi.jsshndemo.activities;
+
+import android.content.Intent;
+import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import com.example.abhi.jsshndemo.R;
+import net.grandcentrix.tray.AppPreferences;
+
+public class SplashActivity extends AppCompatActivity {
+
+  private static int SPLASH_TIME_OUT = 5000;
+
+  @Override protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_splash);
+    AppPreferences appPreferences = new AppPreferences(getApplicationContext());
+    if(appPreferences.getInt("firsttime",0)==0){
+      rejectjson();
+    }
+    else {
+      Intent i = new Intent(getApplicationContext(),MainActivity.class);
+      startActivity(i);
+    }
+  }
+
+  private void rejectjson() {
+    final String backofficeUrl = "";
+    //final RequestQueue requestQueue = Volley.newRequestQueue(this);
+    new Handler().postDelayed(new Runnable() {
+      @Override public void run() {
+        Intent i = new Intent(SplashActivity.this,MainActivity.class);
+        startActivity(i);
+
+        finish();
+      }
+    },SPLASH_TIME_OUT);
+  }
+}
