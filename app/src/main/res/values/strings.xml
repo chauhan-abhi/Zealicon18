@@ -9,6 +9,12 @@
   <string name="register">Register</string>
   <string name="answer">Answer</string>
 
+  <!-- Zealid screen -->
+  <string name="congrats">CONGRATULATIONS</string>
+  <string name="succes_register">You have been succesfully registered! </string>
+  <string name="your_id">Your Zealicon Id is</string>
+  <string name="rules">Note: You need this registration id and pay \nregistration amount at the registration desk \nNon-JSS Students need to bring their College-Ids and passport size photographs</string>
+
 
   <!-- Array values for register -->
   <string-array name="year">
