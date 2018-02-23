@@ -1,5 +1,6 @@
 package com.example.abhi.jsshndemo.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -14,7 +15,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.abhi.jsshndemo.R;
+import com.example.abhi.jsshndemo.activities.ZealIDActivity;
 
+import static android.util.Patterns.EMAIL_ADDRESS;
+import static android.util.Patterns.PHONE;
 
 public class RegisterFragment extends Fragment {
 
@@ -73,13 +77,20 @@ public class RegisterFragment extends Fragment {
                 year = yearView.getSelectedItem().toString();
 
                 Log.v("Register Fragment", name + email + contact + year + branch);
-                if (name.equals("") || email.equals("") || college.equals("") || contact.equals("") || course.equals("") || branch.equals("") || year.equals(""))
+                /*if (name.equals("") || email.equals("") || college.equals("") || contact.equals("") || course.equals("") || branch.equals("") || year.equals(""))
                     Toast.makeText(getActivity(), "Sorry..Please Enter All Fields", Toast.LENGTH_SHORT).show();
                 else {
                     // post data to api
                     registertask();
                 }
-
+*/
+                if(name.length()==0 || !isValidMail(email) || !isValidMobile(contact) || college.length()==0
+                    || branch.equals("") || year.equals(" ") || course.equals("")) {
+                    Toast.makeText(getActivity(), "Sorry..Invalid Fields", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    registertask();
+                }
             }
         });
 
@@ -104,9 +115,19 @@ public class RegisterFragment extends Fragment {
 
     }
 
+    private boolean isValidMail(String email) {
+        return EMAIL_ADDRESS.matcher(email).matches();
+    }
 
+    private boolean isValidMobile(String phone) {
+        return PHONE.matcher(phone).matches();
+    }
+
+    /*****************Handle Response Here**********************/
     void registertask() {
 
+        Intent i = new Intent(this.getActivity(), ZealIDActivity.class);
+        startActivity(i);
     }
 
 

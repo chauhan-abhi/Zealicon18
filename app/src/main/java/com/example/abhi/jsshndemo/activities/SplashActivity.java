@@ -9,14 +9,14 @@ import net.grandcentrix.tray.AppPreferences;
 
 public class SplashActivity extends AppCompatActivity {
 
-  private static int SPLASH_TIME_OUT = 5000;
+  private static int SPLASH_TIME_OUT = 3000;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_splash);
     AppPreferences appPreferences = new AppPreferences(getApplicationContext());
     if(appPreferences.getInt("firsttime",0)==0){
-      rejectjson();
+      requestjson();
     }
     else {
       Intent i = new Intent(getApplicationContext(),MainActivity.class);
@@ -24,14 +24,13 @@ public class SplashActivity extends AppCompatActivity {
     }
   }
 
-  private void rejectjson() {
+  private void requestjson() {
     final String backofficeUrl = "";
     //final RequestQueue requestQueue = Volley.newRequestQueue(this);
     new Handler().postDelayed(new Runnable() {
       @Override public void run() {
         Intent i = new Intent(SplashActivity.this,MainActivity.class);
         startActivity(i);
-
         finish();
       }
     },SPLASH_TIME_OUT);
