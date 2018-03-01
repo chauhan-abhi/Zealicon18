@@ -22,9 +22,8 @@ import java.util.List;
 public class ScheduleFragment extends Fragment {
 
     private final static int OUTER_COUNT = 4;
-    private final static int INNER_COUNT = 4;
-    List<List<InnerData>> outerData = new ArrayList<>();
-    public TailRecyclerView rv;
+    //private final static int INNER_COUNT = 4;
+    private TailRecyclerView rv;
 
     private TextView mtitle;
 
@@ -36,6 +35,8 @@ public class ScheduleFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        final List<List<InnerData>> outerData = new ArrayList<>();
+
         for(int i=0;i<OUTER_COUNT;i++){
             List<InnerData> innerData = new ArrayList<>();
             innerData.add(new InnerData("CODERZ","12:00","AB1","March 13, 2018"));
@@ -48,6 +49,8 @@ public class ScheduleFragment extends Fragment {
 
             outerData.add(innerData);
         }
+        initRecyclerView(outerData);
+
     }
 
     @Override
@@ -57,14 +60,12 @@ public class ScheduleFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_schedule, container, false);
         rv = view.findViewById(R.id.daysRecyclerView);
         mtitle= view.findViewById(R.id.textViewTitle);
-        initRecyclerView(outerData);
         return view;
     }
 
-
     private void initRecyclerView(List<List<InnerData>> data) {
         ((TailLayoutManager)rv.getLayoutManager()).setPageTransformer(new HeaderTransformer());
-        rv.setAdapter(new OuterAdapter(data,getActivity()));
+        rv.setAdapter(new OuterAdapter(data));
         new TailSnapHelper().attachToRecyclerView(rv);
     }
 }

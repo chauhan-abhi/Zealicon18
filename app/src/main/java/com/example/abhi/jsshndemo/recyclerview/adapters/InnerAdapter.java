@@ -36,7 +36,6 @@ public class InnerAdapter extends com.ramotion.garlandview.inner.InnerAdapter<In
         holder.clearContent();
     }
 
-
     @Override
     public int getItemCount() {
         return mData.size();
@@ -48,8 +47,9 @@ public class InnerAdapter extends com.ramotion.garlandview.inner.InnerAdapter<In
     }
 
     public void addData(@NonNull List<InnerData> innerDataList){
+        final int size = mData.size();
         mData.addAll(innerDataList);
-        notifyItemRangeInserted(mData.size(),innerDataList.size());
+        notifyItemRangeInserted(size,innerDataList.size());
     }
 
     public void clearData(){

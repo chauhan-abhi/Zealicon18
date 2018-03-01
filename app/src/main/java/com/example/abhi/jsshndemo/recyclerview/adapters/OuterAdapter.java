@@ -1,6 +1,5 @@
 package com.example.abhi.jsshndemo.recyclerview.adapters;
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,13 +18,13 @@ import java.util.List;
 
 public class OuterAdapter extends TailAdapter<OuterItem> {
     private final int POOL_SIZE = 16;
-    Context c1;
+
     private final List<List<InnerData>> mData;
     private final RecyclerView.RecycledViewPool mPool;
 
-    public OuterAdapter(List<List<InnerData>> data, Context c) {
+    public OuterAdapter(List<List<InnerData>> data) {
         this.mData = data;
-        c1=c;
+
         mPool = new RecyclerView.RecycledViewPool();
         mPool.setMaxRecycledViews(0, POOL_SIZE);
     }

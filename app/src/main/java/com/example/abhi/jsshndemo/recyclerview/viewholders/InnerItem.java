@@ -19,18 +19,16 @@ public class InnerItem extends com.ramotion.garlandview.inner.InnerItem{
     public final TextView mEventTime;
     public final TextView mEventLocation;
     public final TextView mEventDate;
-    public final View mLine;
-    
+
     private InnerData mInnerData;
     
     public InnerItem(View itemView) {
         super(itemView);
         mInnerLayout = ((ViewGroup)itemView).getChildAt(0);
 
-        mEventTitle=itemView.findViewById(R.id.titleTextView);
-        mEventTime=itemView.findViewById(R.id.timeTextView);
-        mEventLocation=itemView.findViewById(R.id.locationTextView);
-        mLine = itemView.findViewById(R.id.guideline);
+        mEventTitle = itemView.findViewById(R.id.titleTextView);
+        mEventTime = itemView.findViewById(R.id.timeTextView);
+        mEventLocation = itemView.findViewById(R.id.locationTextView);
         mEventDate = itemView.findViewById(R.id.dateTextView);
 
         mInnerLayout.setOnClickListener(new View.OnClickListener() {
@@ -49,6 +47,7 @@ public class InnerItem extends com.ramotion.garlandview.inner.InnerItem{
         return mInnerLayout;
     }
 
+    //Subscribe method for event bus
     public InnerData getItemData() {
         return mInnerData;
     }

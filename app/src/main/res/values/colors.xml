@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3b20d2</color>
+    <color name="colorPrimary">#404040</color>
     <color name="colorPrimaryDark">#757575</color>
     <color name="colorAccent">#c2c9f7</color>
 
@@ -10,6 +10,8 @@
     <color name="toolbar">#383547</color>
 
 
+    <!-- App Primary View Colors (might be deprecated). -->
+    <color name="app_white">#FFFEFEFE</color>
 
     <color name="header_green">#b3d577</color>
 
