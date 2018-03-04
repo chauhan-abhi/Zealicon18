@@ -1,10 +1,13 @@
 package com.example.abhi.jsshndemo.recyclerview.viewholders;
 
+import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import com.example.abhi.jsshndemo.R;
+import com.example.abhi.jsshndemo.activities.EventDetailsActivity;
 import com.example.abhi.jsshndemo.model.InnerData;
 
 /**
@@ -13,17 +16,20 @@ import com.example.abhi.jsshndemo.model.InnerData;
 
 public class InnerItem extends com.ramotion.garlandview.inner.InnerItem{
 
-    public final View mInnerLayout;
+    private final View mInnerLayout;
     
-    public final TextView mEventTitle;
-    public final TextView mEventTime;
-    public final TextView mEventLocation;
-    public final TextView mEventDate;
+    private final TextView mEventTitle;
+    private final TextView mEventTime;
+    private final TextView mEventLocation;
+    private final TextView mEventDate;
+
+    private final Context c;
 
     private InnerData mInnerData;
     
-    public InnerItem(View itemView) {
+    public InnerItem(final View itemView) {
         super(itemView);
+        c = itemView.getContext();
         mInnerLayout = ((ViewGroup)itemView).getChildAt(0);
 
         mEventTitle = itemView.findViewById(R.id.titleTextView);
@@ -35,12 +41,14 @@ public class InnerItem extends com.ramotion.garlandview.inner.InnerItem{
             @Override
             public void onClick(View view) {
                 Log.v("Inner","Item Clicked");
+                Intent i = new Intent(c,EventDetailsActivity.class);
+                //i.putExtra("Event",mInnerData);
+                c.startActivity(i);
+
             }
         });
 
     }
-
-
 
     @Override
     protected View getInnerLayout() {

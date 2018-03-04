@@ -33,6 +33,8 @@
     </activity>
     <activity android:name=".activities.ZealIDActivity">
     </activity>
+    <activity android:name=".activities.EventDetailsActivity">
+    </activity>
   </application>
 
 </manifest>
