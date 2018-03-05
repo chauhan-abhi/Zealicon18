@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.abhi.jsshndemo.R;
+import com.example.abhi.jsshndemo.activities.EventDetailsActivity;
 import com.example.abhi.jsshndemo.activities.ZealIDActivity;
 
 import static android.util.Patterns.EMAIL_ADDRESS;
@@ -84,7 +85,7 @@ public class RegisterFragment extends Fragment {
                     registertask();
                 }
 */
-                if(name.length()==0 || !isValidMail(email) || !isValidMobile(contact) || college.length()==0
+                if(name.length()==0 || !isValidMail(email) || contact.length()!= 10 || college.length()==0
                     || branch.equals("") || year.equals(" ") || course.equals("")) {
                     Toast.makeText(getActivity(), "Sorry..Invalid Fields", Toast.LENGTH_SHORT).show();
                 }
@@ -126,9 +127,19 @@ public class RegisterFragment extends Fragment {
     /*****************Handle Response Here**********************/
     void registertask() {
 
-        Intent i = new Intent(this.getActivity(), ZealIDActivity.class);
+        Intent i = new Intent(this.getActivity(),ZealIDActivity.class);
         startActivity(i);
     }
 
+    @Override public void onDetach() {
+        super.onDetach();
+        setEmpty();
+    }
 
+    void setEmpty(){
+        nameView.setText("");
+        collegeView.setText("");
+        contactView.setText("");
+        emailView.setText("");
+    }
 }

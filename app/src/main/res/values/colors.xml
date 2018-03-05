@@ -11,7 +11,7 @@
 
 
     <!-- App Primary View Colors (might be deprecated). -->
-    <color name="app_white">#FFFEFEFE</color>
+    <color name="app_white">#fefefe</color>
 
     <color name="header_green">#b3d577</color>
 

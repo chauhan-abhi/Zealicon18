@@ -9,7 +9,7 @@ public class Developer {
   private String name;
   private String imgurl;
   private String position;
-  private String gitHub;
+  private String gitHub;    //for dev url ==== for team mobile no
 
   //Constructor for Developer and Team members
   public Developer(String name, String imgurl, String position, String gitHub) {

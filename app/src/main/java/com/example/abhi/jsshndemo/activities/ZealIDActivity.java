@@ -13,6 +13,7 @@ public class ZealIDActivity extends AppCompatActivity {
     findViewById(R.id.backButton).setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View view) {
         finish();
+        //nulify prev entries
       }
     });
 

@@ -15,6 +15,9 @@
   <string name="your_id">Your Zealicon Id is</string>
   <string name="rules">Note: You need this registration id and pay \nregistration amount at the registration desk \nNon-JSS Students need to bring their College-Ids and passport size photographs</string>
 
+  <!-- Event Detail Page -->
+  <string name="toggle">Want to be notified ?..just tell us</string>
+
 
   <!-- Array values for register -->
   <string-array name="year">
