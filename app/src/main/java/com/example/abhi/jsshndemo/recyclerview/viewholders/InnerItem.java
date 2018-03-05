@@ -42,7 +42,6 @@ public class InnerItem extends com.ramotion.garlandview.inner.InnerItem{
             public void onClick(View view) {
                 Log.v("Inner","Item Clicked");
                 Intent i = new Intent(c,EventDetailsActivity.class);
-                //i.putExtra("Event",mInnerData);
                 c.startActivity(i);
 
             }

@@ -1,5 +1,7 @@
 package com.example.abhi.jsshndemo.recyclerview.adapters;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -52,6 +54,7 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.TeamViewHolder
     holder.callFab.setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View view) {
         Log.v("onClick Call Fab",""+team.getGitHub());
+        //Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + team.getGitHub()));
 
       }
     });
