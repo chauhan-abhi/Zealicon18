@@ -33,6 +33,7 @@ dependencies {
   androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
   compile 'com.squareup.picasso:picasso:2.5.2'
+  compile 'de.hdodenhof:circleimageview:2.2.0'
   compile 'net.grandcentrix.tray:tray:0.11.1'
   compile 'com.mcxiaoke.volley:library:1.0.19'
 

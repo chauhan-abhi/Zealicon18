@@ -4,12 +4,16 @@ package com.example.abhi.jsshndemo.model;
  * Created by abhi on 16/2/18.
  */
 
+/**
+ * THis model is used for all Developers Team and Sponsors
+ */
 public class Developer {
 
   private String name;
   private String imgurl;
   private String position;
-  private String gitHub;    //for dev url ==== for team mobile no
+  /*********This field is contact no for team and github url for developer************/
+  private String gitHub;
 
   //Constructor for Developer and Team members
   public Developer(String name, String imgurl, String position, String gitHub) {

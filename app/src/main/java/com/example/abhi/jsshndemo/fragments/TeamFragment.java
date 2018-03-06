@@ -36,7 +36,7 @@ public class TeamFragment extends Fragment {
         mTeamList = new ArrayList<>();
         for(int i=1;i<5;i++){
             //used Developer model as for zealicon team member
-            mTeamList.add(new Developer("DV","","CTC","9999999999"));
+            mTeamList.add(new Developer("DV","https://scontent-bom1-1.xx.fbcdn.net/v/t31.0-8/17637144_1270070083109005_6740293189372331361_o.jpg?oh=5b4076ba66d30d85f859881624a96ecd&oe=5B086293","CTC","9999999999"));
         }
     }
 
