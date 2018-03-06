@@ -9,7 +9,7 @@
     tools:layout_editor_absoluteY="81dp">
 
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/devImageView"
         android:layout_width="80dp"
         android:layout_height="80dp"
