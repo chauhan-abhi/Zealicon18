@@ -37,9 +37,7 @@ public class MainActivity extends AppCompatActivity  {
     private int POS_CURRENT=-1;
     private BottomNavigationView mBottomNav;
     private Fragment selectedFragment=null;
-
-
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
