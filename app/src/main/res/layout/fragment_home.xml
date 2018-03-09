@@ -41,14 +41,29 @@
   </android.support.design.widget.AppBarLayout>
 
   <!-- TODO: Update blank fragment layout -->
-  <TextView
+
+  <RelativeLayout
       android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:fontFamily="@font/aref_ruqaa"
-      android:gravity="center"
-      android:text="HomeFragment"
-      android:textColor="@android:color/holo_blue_bright"
-      android:textSize="18sp"
-      />
+      android:layout_height="wrap_content"
+      android:gravity="top"
+      android:fitsSystemWindows="true"
+      app:layout_behavior="@string/appbar_scrolling_view_behavior"
+      >
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:src="@drawable/tweety"
+        android:id="@+id/tweety"
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/zealicon"
+        android:padding="15dp"
+        />
+
+  </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>
