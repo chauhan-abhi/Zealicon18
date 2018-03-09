@@ -72,7 +72,7 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.TeamViewHolder
     holder.callFab.setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View view) {
         Log.v("onClick Call Fab",""+team.getGitHub());
-        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + team.getGitHub()));
+        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + team.getGitHub()));
         if (ActivityCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE)
             != PackageManager.PERMISSION_GRANTED) {
           // TODO: Consider calling
