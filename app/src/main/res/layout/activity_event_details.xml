@@ -21,25 +21,21 @@
         android:background="?attr/colorPrimary"
         android:fitsSystemWindows="true"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
         app:layout_collapseMode="pin"
-        android:layout_gravity="bottom"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         >
 
       <TextView
-          android:layout_width="match_parent"
+          android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_gravity="center"
           android:text="Event Details"
-          android:textAlignment="center"
+          android:layout_marginLeft="5dp"
           android:textAllCaps="false"
+          android:fontFamily="@font/antic"
+          android:textAlignment="viewStart"
           android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
           android:textColor="#FFFFFF"
-          android:textSize="24sp"
           android:textStyle="bold"
-          android:typeface="sans"
-          style="@style/MyTextStyle_Toolbar_Heading"
           app:layout_collapseMode="pin"
           />
     </android.support.v7.widget.Toolbar>
