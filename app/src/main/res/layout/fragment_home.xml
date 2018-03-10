@@ -7,59 +7,59 @@
     android:fitsSystemWindows="true"
     tools:context="com.example.abhi.jsshndemo.fragments.HomeFragment"
     >
-
   <android.support.design.widget.AppBarLayout
-      android:id="@+id/appbar"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:fitsSystemWindows="true"
-      android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-      tools:layout_editor_absoluteY="2dp">
+      android:layout_height="50dp"
+      android:backgroundTint="@color/trans"
+      >
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+        android:id="@+id/toolbar_eventdetails"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:background="@color/toolbar"
-        android:fitsSystemWindows="true"
-        app:layout_collapseMode="pin"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
         >
 
       <TextView
-          android:layout_width="wrap_content"
+          android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:layout_gravity="center"
-          android:layout_marginStart="10dp"
-          android:fontFamily="@font/aref_ruqaa"
+          android:gravity="center_horizontal"
           android:text="Home"
           android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-          android:textStyle="bold"
+          style="@style/MyTextStyle_Toolbar_Heading"
           />
 
     </android.support.v7.widget.Toolbar>
-  </android.support.design.widget.AppBarLayout>
 
-  <!-- TODO: Update blank fragment layout -->
+  </android.support.design.widget.AppBarLayout>
 
   <RelativeLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:gravity="top"
-      android:fitsSystemWindows="true"
-      app:layout_behavior="@string/appbar_scrolling_view_behavior"
       >
+
 
     <pl.droidsonroids.gif.GifImageView
         android:layout_width="80dp"
         android:layout_height="50dp"
         android:src="@drawable/tweety"
         android:id="@+id/tweety"
-        />
+        android:layout_marginTop="20dp"
 
-    <ImageView
+        />
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/timon"
+        android:layout_width="140dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="40dp"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/timon" />
+
+   <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:src="@drawable/zealicon"
         android:padding="15dp"
         />

@@ -21,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.abhi.jsshndemo.R;
+import com.example.abhi.jsshndemo.model.InnerData;
 import com.example.abhi.jsshndemo.service.NotificationService;
 
 import java.text.ParseException;
@@ -33,8 +34,9 @@ public class EventDetailsActivity extends AppCompatActivity {
   private TextView eventDesc;
   private TextView firstPrize;
   private TextView secPrize;
-  private TextView contact;
+  private TextView contact,rulesView,descriptionView;
   private ImageButton callButton;
+  InnerData innerData;
   private SwitchCompat interestedSwitch,goingSwitch;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
@@ -47,19 +49,26 @@ public class EventDetailsActivity extends AppCompatActivity {
     secPrize = findViewById(R.id.text_event_details_secondprize);
     contact = findViewById(R.id.text_event_details_contact);
     callButton = findViewById(R.id.callbutton_eventdetails);
+    rulesView=findViewById(R.id.text_event_details_rules);
     interestedSwitch=findViewById(R.id.switchcompat_interested);
     goingSwitch=findViewById(R.id.switchcompat_going);
 
-    //*************Dummy Data***************//
-    eventName.setText("Technovision");
-    eventDesc.setText("Rules \n \n #1: dkjasdkjdkadkadkj \n #2 hfjdshgjhgfhghjfgdsjhf \n jkhfkjdhfkjshfkjdshkdsjhfkjsdhfjhds \n kjhdjfdjshf \n sds");
-    firstPrize.setText("2000");
-    secPrize.setText("1500");
-    contact.setText("abhi-- 99####9248 \n hdgfh -- 99####9393");
+    if(getIntent()!=null){
+        innerData=(InnerData)getIntent().getSerializableExtra("eventData");
+        eventName.setText(innerData.getEvent_name());
+        eventDesc.setText(innerData.getEvent_description());
+        firstPrize.setText(innerData.getPrize1());
+        secPrize.setText(innerData.getPrize2());
+        contact.setText(innerData.getContact_name1()+" : "+innerData.getContact_num1()+"\n"
+                        +innerData.getContact_name2()+" : "+innerData.getContact_num2());
+        rulesView.setText(innerData.getRules());
+
+    }
+    //*************Dummy Data***************/
 
     callButton.setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View view) {
-        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + "99990649248"));
+        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + innerData.getContact_num1()));
         if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CALL_PHONE)
             != PackageManager.PERMISSION_GRANTED) {
           // TODO: Consider calling
@@ -102,9 +111,9 @@ public class EventDetailsActivity extends AppCompatActivity {
   }
 
   private void notifyme() {
-    String toParse = ""; // Results in "2-5-2012 20:43"
+    String toParse = innerData.getTimings(); // Results in "2-5-2012 20:43"
     SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss"); // I assume d-M, you may refer to M-d for month-day instead.
-    Date date = null; // You will need try/catch around this
+    Date date = new Date(); // You will need try/catch around this
     try {
       date = formatter.parse(toParse);
     } catch (ParseException e) {
@@ -112,7 +121,7 @@ public class EventDetailsActivity extends AppCompatActivity {
     }
     SharedPreferences sf=getSharedPreferences("notify",0);
     int notificationid=sf.getInt("key",1);
-    sf.edit().putInt("eventname",notificationid).commit();
+    sf.edit().putInt("eventname",notificationid).apply();
     long millis = date.getTime();
     Intent intent=new Intent(getApplicationContext(), NotificationService.AlarmReceiver.class);
     intent.putExtra("keynotify", notificationid);
@@ -121,7 +130,7 @@ public class EventDetailsActivity extends AppCompatActivity {
 
 
     PendingIntent pi=PendingIntent.getBroadcast(getApplicationContext(),notificationid,intent,PendingIntent.FLAG_ONE_SHOT);
-    sf.edit().putInt("key",notificationid+1).commit();
+    sf.edit().putInt("key",notificationid+1).apply();
     AlarmManager am=(AlarmManager)getApplicationContext().getSystemService(Context.ALARM_SERVICE);
     am.set(AlarmManager.RTC_WAKEUP,millis-900000,pi);
   }

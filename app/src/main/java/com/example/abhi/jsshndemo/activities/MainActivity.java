@@ -2,6 +2,7 @@ package com.example.abhi.jsshndemo.activities;
 
 
 import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.support.v4.app.Fragment;
 
 import android.graphics.drawable.Drawable;
@@ -50,6 +51,8 @@ public class MainActivity extends AppCompatActivity  {
         initBottomNavigation();
 
     }
+
+
 
 
 

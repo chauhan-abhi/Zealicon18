@@ -36,6 +36,7 @@ dependencies {
   compile 'de.hdodenhof:circleimageview:2.2.0'
   compile 'net.grandcentrix.tray:tray:0.11.1'
   compile 'com.mcxiaoke.volley:library:1.0.19'
+  compile 'com.google.code.gson:gson:2.8.2'
 
 
   compile project(path: ':garland-view')

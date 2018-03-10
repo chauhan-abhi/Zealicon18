@@ -59,6 +59,11 @@ Further details will be disclosed soon. Keep visiting this page to stay updated 
 
   <!-- TODO: Remove or change this placeholder text -->
   <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="default_str">[]</string>
+  <string name="day1events">day1events</string>
+  <string name="day2events">day2events</string>
+  <string name="day3events">day3events</string>
+  <string name="day4events">day4events</string>
 
 
 </resources>

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#404040</color>
-    <color name="colorPrimaryDark">#757575</color>
+    <color name="colorPrimaryDark">#228B22</color>
     <color name="colorAccent">#c2c9f7</color>
 
     <color name="textColorPrimary">#212121</color>
     <color name="textColorSecondary">#757575</color>
 
     <color name="toolbar">#383547</color>
-
+    <color name="trans">#00000000 </color>.
 
     <!-- App Primary View Colors (might be deprecated). -->
     <color name="app_white">#fefefe</color>

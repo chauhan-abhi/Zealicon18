@@ -4,15 +4,15 @@
   <style name="AppTheme.NoActionBar">
     <item name="windowActionBar">false</item>
     <item name="windowNoTitle">true</item>
-
+    <item name="android:statusBarColor">@color/colorPrimaryDark</item>
     <item name="android:windowContentTransitions">true</item>
     <item name="android:windowEnterTransition">@transition/details_trasnsition</item>
     <item name="android:windowExitTransition">@transition/details_trasnsition</item>
     <item name="android:windowSharedElementEnterTransition">@transition/details_trasnsition</item>
     <item name="android:windowSharedElementExitTransition">@transition/details_trasnsition</item>
-
     <item name="android:windowBackground">@color/app_white</item>
     <item name="android:windowTranslucentStatus">true</item>
+    <item name="android:windowContentOverlay">@null</item>
   </style>
 
   <style name="AppTheme.NoActionBar2">

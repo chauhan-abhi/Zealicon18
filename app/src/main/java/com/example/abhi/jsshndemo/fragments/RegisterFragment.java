@@ -7,9 +7,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +28,8 @@ public class RegisterFragment extends Fragment {
 
     private EditText nameView, emailView, collegeView, contactView;
     private Button register;
+    private WebView webview;
+    ProgressBar progressBar;
     private Spinner yearView, branchView, courseView;
 
     /*String year="1",branch="CSE",course="btech";
@@ -65,6 +70,18 @@ public class RegisterFragment extends Fragment {
         collegeView = (EditText) view.findViewById(R.id.college);
         contactView = (EditText) view.findViewById(R.id.contact);
         register = (Button) view.findViewById(R.id.register);
+        webview = (WebView) view.findViewById(R.id.webview_register);
+        progressBar = view.findViewById(R.id.progress);
+
+        webview.setVisibility(View.GONE);
+        webview.setWebViewClient(new WebViewClient() {
+
+            public void onPageFinished(WebView view, String url) {
+                webview.setVisibility(View.VISIBLE);
+                progressBar.setVisibility(View.GONE);
+            }
+        });
+        webview.loadUrl("http://register.zealicon.in");
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -124,7 +141,6 @@ public class RegisterFragment extends Fragment {
         return PHONE.matcher(phone).matches();
     }
 
-    /*****************Handle Response Here**********************/
     void registertask() {
 
         Intent i = new Intent(this.getActivity(),ZealIDActivity.class);
