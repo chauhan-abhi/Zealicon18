@@ -124,10 +124,10 @@ public class OuterItem extends HeaderItem {
         return mHeaderAlpha;
     }
 
-    public void setContent(@NonNull List<InnerData> innerDataList){
+    public void setContent(@NonNull List<InnerData> innerDataList,int pos){
 
         Context context=itemView.getContext();
-        String title = "DAY 1";
+        String title = "DAY "+(pos+1);
         final List<InnerData> tail= innerDataList;
         mRecyclerView.setLayoutManager(new InnerLayoutManager());
         ((InnerAdapter)mRecyclerView.getAdapter()).addData(tail);

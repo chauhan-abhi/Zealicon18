@@ -36,7 +36,7 @@ public class OuterAdapter extends TailAdapter<OuterItem> {
 
     @Override
     public void onBindViewHolder(OuterItem holder, int position) {
-        holder.setContent(mData.get(position));
+        holder.setContent(mData.get(position),position);
     }
 
     @Override
