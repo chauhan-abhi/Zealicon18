@@ -6,19 +6,18 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:scrollbarAlwaysDrawVerticalTrack="true"
-    tools:context="com.example.abhi.jsshndemo.fragments.RegisterFragment"
+    tools:context="com.example.abhi.zealicon.fragments.RegisterFragment"
     >
-  <android.support.design.widget.AppBarLayout
-      android:layout_width="match_parent"
-      android:layout_height="50dp"
-      android:backgroundTint="@color/trans"
-      >
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_eventdetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
+        android:layout_gravity="top"
         >
 
       <TextView
@@ -33,17 +32,13 @@
 
     </android.support.v7.widget.Toolbar>
 
-  </android.support.design.widget.AppBarLayout>
-
-
   <RelativeLayout
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:fitsSystemWindows="true"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/appbar"
-      app:layout_behavior="@string/appbar_scrolling_view_behavior"
+      android:orientation="vertical"
+      app:layout_constraintEnd_toEndOf="@id/toolbar_eventdetails"
+      app:layout_constraintStart_toStartOf="@id/toolbar_eventdetails"
+      app:layout_constraintTop_toBottomOf="@+id/toolbar_eventdetails"
       >
 
     <ProgressBar
@@ -58,12 +53,11 @@
         android:layout_height="match_parent"
         android:id="@+id/webview_register"
 
-
         >
     </WebView>
 
   </RelativeLayout>
-
+  </LinearLayout>
   <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="match_parent"

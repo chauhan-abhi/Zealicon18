@@ -1,63 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:fitsSystemWindows="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/app_white">
+    android:background="@drawable/eventdesc">
 
-
-  <android.support.design.widget.AppBarLayout
-      android:layout_width="match_parent"
-      android:layout_height="50dp"
-      android:layout_marginTop="20dp"
-      android:backgroundTint="@color/trans"
-      android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-      >
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_eventdetails"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fitsSystemWindows="true"
-        app:layout_collapseMode="pin"
-        android:layout_gravity="bottom"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        >
-
-      <TextView
+        android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/coderz"
+        android:id="@+id/catIconDetail"
+        />
+      <android.support.design.widget.AppBarLayout
           android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_gravity="center"
-          android:gravity="center"
-          android:id="@+id/text_event_details_name"
-          android:layout_marginStart="10dp"
-          android:text="Event name"
-          android:textColor="@color/app_white"
-          android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-          android:textStyle="bold"
-          style="@style/MyTextStyle_Toolbar_Heading"
-          />
+          android:layout_height="50dp"
+          android:backgroundTint="@color/trans"
+          >
 
-    </android.support.v7.widget.Toolbar>
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_eventdetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
 
-  </android.support.design.widget.AppBarLayout>
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center"
+              android:id="@+id/text_event_details_name"
+              android:text="Event name"
+              android:textColor="@color/colorPrimaryDark"
+              android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+              android:textStyle="bold"
+              style="@style/MyTextStyle_Toolbar_Heading"
+              />
 
+        </android.support.v7.widget.Toolbar>
+
+      </android.support.design.widget.AppBarLayout>
+    </FrameLayout>
 
   <ScrollView
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:scrollbars="vertical"
-      android:padding="10dp"
-      app:layout_behavior="@string/appbar_scrolling_view_behavior">
+      >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         style="@android:style/Theme.Translucent"
         android:orientation="vertical"
+        android:layout_margin="10dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp">
 <!--
@@ -178,7 +178,7 @@
             android:paddingBottom="2dp"
             android:layout_marginTop="20dp"
             app:cardElevation="1dp"
-            app:cardBackgroundColor="#22FFFFFF"
+            app:cardBackgroundColor="@color/black_opaq"
             >
 
           <LinearLayout
@@ -214,7 +214,7 @@
               android:paddingBottom="2dp"
               android:layout_marginTop="20dp"
               app:cardElevation="1dp"
-              app:cardBackgroundColor="#22FFFFFF"
+              app:cardBackgroundColor="@color/black_opaq"
               >
               <LinearLayout
                   android:layout_width="match_parent"
@@ -230,7 +230,7 @@
                       android:textAlignment="center"
                       android:textColor="@color/textColorPrimary"
                       android:textSize="24sp"
-                      android:fontFamily="@font/huggable_family"
+                      android:fontFamily="@font/acme"
                       />
 
                   <TextView
@@ -245,6 +245,56 @@
                       android:textColor="@color/textColorPrimary"
                       android:textSize="16sp"
                       android:maxLines="8"
+                      android:ellipsize="marquee"
+                      android:fontFamily="sans-serif"
+                      />
+
+              </LinearLayout>
+
+          </android.support.v7.widget.CardView>
+
+          <android.support.v7.widget.CardView
+              app:paddingStart="10dp"
+              app:paddingEnd="10dp"
+              android:layout_gravity="center"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              app:cardCornerRadius="4dp"
+              android:paddingTop="2dp"
+              android:paddingBottom="2dp"
+              android:layout_marginTop="20dp"
+              android:layout_marginBottom="20dp"
+              app:cardElevation="1dp"
+              app:cardBackgroundColor="@color/black_opaq"
+              >
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical">
+                  <TextView
+                      android:id="@+id/timings"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center_horizontal"
+                      android:gravity="center_horizontal"
+                      android:text="Timings"
+                      android:textAlignment="center"
+                      android:textColor="@color/textColorPrimary"
+                      android:textSize="24sp"
+                      android:fontFamily="@font/acme"
+                      />
+
+                  <TextView
+                      android:id="@+id/text_event_details_timings"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center_horizontal"
+                      android:gravity="center_horizontal"
+                      android:layout_marginTop="10dp"
+                      android:text="Not Declared"
+                      android:textAlignment="center"
+                      android:textColor="@color/textColorPrimary"
+                      android:textSize="16sp"
                       android:fontFamily="sans-serif"
                       />
 
@@ -261,9 +311,9 @@
             app:cardCornerRadius="4dp"
             android:paddingTop="2dp"
             android:paddingBottom="2dp"
-            android:layout_marginTop="20dp"
+              android:layout_marginBottom="20dp"
             app:cardElevation="1dp"
-            app:cardBackgroundColor="#22FFFFFF"
+              app:cardBackgroundColor="@color/black_opaq"
             >
           <LinearLayout
               android:layout_width="match_parent"
@@ -279,7 +329,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/textColorPrimary"
                 android:textSize="24sp"
-                android:fontFamily="@font/huggable_family"
+                android:fontFamily="@font/acme"
                 />
 
             <TextView
@@ -304,7 +354,7 @@
       <LinearLayout
           android:layout_width="match_parent"
           android:layout_height="100dp"
-          android:layout_marginTop="10dp">
+          >
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
@@ -363,7 +413,9 @@
               app:cardCornerRadius="4dp"
               android:paddingTop="2dp"
               android:layout_marginRight="10dp"
-              app:cardBackgroundColor="#22FFFFFF"
+              android:layout_marginTop="10dp"
+              android:layout_marginBottom="10dp"
+              app:cardBackgroundColor="@color/black_opaq"
               android:paddingBottom="2dp"
               app:cardElevation="1dp">
 
@@ -373,6 +425,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="1st Prize"
+                android:maxLines="1"
                 android:textColor="@color/textColorPrimary"
                 android:textSize="20dp"
                 style="@style/MyTextStyle_SubHeading"
@@ -395,7 +448,9 @@
               android:layout_height="wrap_content"
               app:cardCornerRadius="4dp"
               android:paddingTop="2dp"
-              app:cardBackgroundColor="#22FFFFFF"
+              android:layout_marginTop="10dp"
+              android:layout_marginBottom="10dp"
+              app:cardBackgroundColor="@color/black_opaq"
               android:paddingBottom="2dp"
               app:cardElevation="1dp">
             <TextView
@@ -404,6 +459,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="2nd Prize"
+                android:maxLines="1"
                 android:textColor="@color/textColorPrimary"
                 android:textSize="20dp"
                 style="@style/MyTextStyle_SubHeading"
@@ -416,7 +472,8 @@
       <LinearLayout
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:orientation="vertical">
+          android:orientation="vertical"
+          android:layout_marginTop="20dp">
 
         <android.support.v7.widget.CardView
             app:paddingStart="@dimen/abc_action_bar_default_padding_start_material"
@@ -424,9 +481,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="4dp"
-            app:cardBackgroundColor="#22FFFFFF"
+            app:cardBackgroundColor="@color/black_opaq"
             app:cardElevation="2dp"
-            android:layout_marginTop="20dp"
             android:layout_marginBottom="5dp">
 
             <LinearLayout
@@ -444,8 +500,7 @@
                       android:textAlignment="center"
                       android:textColor="@color/textColorPrimary"
                       android:textSize="20sp"
-                      android:fontFamily="@font/huggable"
-                      android:textStyle="bold"
+                      android:fontFamily="@font/acme"
                       />
                     <TextView
                         android:id="@+id/text_event_details_contact"
@@ -494,4 +549,4 @@
     </LinearLayout>
   </ScrollView>
 
-</android.support.design.widget.CoordinatorLayout>
+</LinearLayout>

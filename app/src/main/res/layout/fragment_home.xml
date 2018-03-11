@@ -5,19 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.abhi.jsshndemo.fragments.HomeFragment"
+    tools:context="com.example.abhi.zealicon.fragments.HomeFragment"
     >
-  <android.support.design.widget.AppBarLayout
-      android:layout_width="match_parent"
-      android:layout_height="50dp"
-      android:backgroundTint="@color/trans"
-      >
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_eventdetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_gravity="top"
         >
 
       <TextView
@@ -31,9 +26,6 @@
           />
 
     </android.support.v7.widget.Toolbar>
-
-  </android.support.design.widget.AppBarLayout>
-
   <RelativeLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"

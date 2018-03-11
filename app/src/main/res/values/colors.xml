@@ -9,6 +9,8 @@
 
     <color name="toolbar">#383547</color>
     <color name="trans">#00000000 </color>.
+    <color name="black_opaq">#16000000</color>
+
 
     <!-- App Primary View Colors (might be deprecated). -->
     <color name="app_white">#fefefe</color>

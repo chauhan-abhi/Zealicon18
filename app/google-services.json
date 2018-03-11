@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "71617597866",
+    "firebase_url": "https://zealicon-922c1.firebaseio.com",
+    "project_id": "zealicon-922c1",
+    "storage_bucket": "zealicon-922c1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:71617597866:android:17fbbe002be800ce",
+        "android_client_info": {
+          "package_name": "com.example.abhi.zealicon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "71617597866-8es0elf6uh1r4p9393ljad90kubjvrsc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.abhi.zealicon",
+            "certificate_hash": "103bc7f4716080fcde06bbc5ba459b75a02987ea"
+          }
+        },
+        {
+          "client_id": "71617597866-himed7a5vv3tc8unu420304n8v78i8ki.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArPUy9Vcy1SsmUm9TBKwODT6dHvQJ1b2g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "71617597866-himed7a5vv3tc8unu420304n8v78i8ki.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

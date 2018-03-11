@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/sponsor_image"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_margin="8dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
@@ -17,19 +17,17 @@
         tools:ignore="UnknownId" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_margin="8dp"
-        android:layout_marginRight="12dp"
+        android:padding="8dp"
         android:layout_toEndOf="@+id/sponsor_image"
         android:gravity="center">
     <TextView
         android:id="@+id/sponsor_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-
         android:fontFamily="@font/hammersmith_one"
         android:text="Sponsor's Name"
         android:textSize="24sp" />

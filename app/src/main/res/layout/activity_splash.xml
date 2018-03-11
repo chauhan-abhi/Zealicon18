@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#383547"
-    tools:context="com.example.abhi.jsshndemo.activities.SplashActivity"
+    tools:context="com.example.abhi.zealicon.activities.SplashActivity"
     >
 
   <TextView

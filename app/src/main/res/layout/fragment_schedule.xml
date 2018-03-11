@@ -6,19 +6,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.abhi.jsshndemo.fragments.ScheduleFragment">
+    tools:context="com.example.abhi.zealicon.fragments.ScheduleFragment">
 
-    <android.support.design.widget.AppBarLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:backgroundTint="@color/trans"
-        >
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_eventdetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_gravity="top"
         >
 
         <TextView
@@ -32,7 +31,6 @@
             />
 
     </android.support.v7.widget.Toolbar>
-    </android.support.design.widget.AppBarLayout>
 
     <!--
     <android.support.design.widget.AppBarLayout
@@ -76,10 +74,10 @@
         android:layout_height="match_parent"
         android:layout_marginTop="30dp"
         android:clipChildren="false"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         >
 
     </com.ramotion.garlandview.TailRecyclerView>
 
+    </LinearLayout>
 
 </android.support.design.widget.CoordinatorLayout>

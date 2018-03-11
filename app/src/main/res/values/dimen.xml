@@ -6,13 +6,10 @@
     <dimen name="dp80">80dp</dimen>
 
     <dimen name="inner_item_offset">8dp</dimen>
-    <dimen name="inner_item_height">140dp</dimen>
-
-
+    <dimen name="inner_item_height">150dp</dimen>
     <dimen name="details_avatar_border">5dp</dimen>
     <dimen name="item_avatar_border">1dp</dimen>
     <dimen name="item_icon_size">@dimen/header_icon_size</dimen>
-
     <dimen name="header_title1_text_size">22sp</dimen>
     <dimen name="header_title2_text_size">20sp</dimen>
     <dimen name="header_title2_name_text_size">17sp</dimen>
