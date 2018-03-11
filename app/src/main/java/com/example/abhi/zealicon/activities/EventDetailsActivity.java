@@ -79,7 +79,7 @@ public class EventDetailsActivity extends AppCompatActivity {
         else if(innerData.getCategory().equals("Z-wars"))
             catIconView.setImageResource(R.drawable.zwars);
 
-        else if(innerData.getCategory().equals("PlayItOn"))
+        else if(innerData.getCategory().equals("Play it On"))
             catIconView.setImageResource(R.drawable.playiton);
 
         eventName.setText(innerData.getEvent_name());

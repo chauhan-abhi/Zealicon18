@@ -3,18 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/trans"
+    >
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/trans"
         >
 
         <View
             android:id="@+id/header_middle"
             android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:background="@color/toolbar"
+            android:layout_height="70dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/daycloud"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -25,23 +30,23 @@
             android:id="@+id/headerTextView"
             style="@style/Base.ThemeOverlay.AppCompat"
             android:layout_width="match_parent"
-            android:gravity="center"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/acme"
+            android:gravity="center"
             android:text="Day 1"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="#FFF"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="@+id/header_middle"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.059"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/header_middle"
-            app:layout_constraintVertical_bias="0.929" />
+            app:layout_constraintVertical_bias="0.526" />
 
 
     </android.support.constraint.ConstraintLayout>

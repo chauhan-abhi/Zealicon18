@@ -59,10 +59,44 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.TeamViewHolder
     holder.position.setText(team.getPosition());
     //holder.profileImg.setImageResource(R.drawable.avatar);
     if(!(team.getImgurl().isEmpty() || team.getImgurl() == null)){
-      Picasso.with(context)
-          .load(Uri.parse(team.getImgurl()))
-          .placeholder(R.drawable.avatar)
-          .into(holder.profileImg);
+      if(team.getImgurl().equals("abhishekk"))
+        holder.profileImg.setImageResource(R.drawable.abhishekk);
+      else if(team.getImgurl().equals("abhishekt"))
+        holder.profileImg.setImageResource(R.drawable.abhishekt);
+      else if(team.getImgurl().equals("abhisheks"))
+        holder.profileImg.setImageResource(R.drawable.abhisheks);
+      else if(team.getImgurl().equals("aradhya"))
+        holder.profileImg.setImageResource(R.drawable.aradhya);
+      else if(team.getImgurl().equals("ashwani"))
+        holder.profileImg.setImageResource(R.drawable.ashwani);
+      else if(team.getImgurl().equals("ayushg"))
+        holder.profileImg.setImageResource(R.drawable.ayushg);
+      else if(team.getImgurl().equals("ayushs"))
+        holder.profileImg.setImageResource(R.drawable.ayushs);
+      else if(team.getImgurl().equals("dv"))
+        holder.profileImg.setImageResource(R.drawable.dv);
+      else if(team.getImgurl().equals("gaurav"))
+        holder.profileImg.setImageResource(R.drawable.gaurav);
+      else if(team.getImgurl().equals("manu"))
+        holder.profileImg.setImageResource(R.drawable.manu);
+      else if(team.getImgurl().equals("mimanshi"))
+        holder.profileImg.setImageResource(R.drawable.mimanshi);
+      else if(team.getImgurl().equals("prashant"))
+        holder.profileImg.setImageResource(R.drawable.prashant);
+      else if(team.getImgurl().equals("rahul"))
+        holder.profileImg.setImageResource(R.drawable.rahul);
+      else if(team.getImgurl().equals("sarmishtha"))
+        holder.profileImg.setImageResource(R.drawable.sarmishtha);
+      else if(team.getImgurl().equals("shubham"))
+        holder.profileImg.setImageResource(R.drawable.shubham);
+      else if(team.getImgurl().equals("utkarshs"))
+        holder.profileImg.setImageResource(R.drawable.utkarshs);
+      else if(team.getImgurl().equals("utkarsht"))
+        holder.profileImg.setImageResource(R.drawable.utkarsht);
+      else if(team.getImgurl().equals("vaibhav"))
+        holder.profileImg.setImageResource(R.drawable.vaibhav);
+      else
+        holder.profileImg.setImageResource(R.drawable.avatar);
     }
     else {
       holder.profileImg.setImageResource(R.drawable.avatar);
