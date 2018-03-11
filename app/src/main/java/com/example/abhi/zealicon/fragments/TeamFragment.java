@@ -33,10 +33,69 @@ public class TeamFragment extends Fragment {
 
     private void initTeamData() {
         mTeamList = new ArrayList<>();
-        for(int i=1;i<5;i++){
-            //used Developer model as for zealicon team member
-            mTeamList.add(new Developer("DV","https://scontent-bom1-1.xx.fbcdn.net/v/t31.0-8/17637144_1270070083109005_6740293189372331361_o.jpg?oh=5b4076ba66d30d85f859881624a96ecd&oe=5B086293","CTC","9999999999"));
-        }
+        mTeamList.add(new Developer("Utkarsh Singh",
+                "",
+                "Festival Secretary","8586852282"));
+        mTeamList.add(new Developer("Abhishek Kumar",
+                "",
+                "Deputy Festival Secretary","9711541714"));
+        mTeamList.add(new Developer("Shubham Saxena",
+                "",
+                "Financial Head","8287524525"));
+        mTeamList.add(new Developer("Divyanshu Verma",
+                "",
+                "Technical and Creatives Head","9643903611"));
+        mTeamList.add(new Developer("Abhishek Kumar Singh",
+                "",
+                "Application Head","7503024739"));
+        mTeamList.add(new Developer("Ayush Sehgal",
+                "",
+                "Student Welfare Head","9910680524"));
+        mTeamList.add(new Developer("Abhishek Trivedi",
+                "",
+                "Events Head","9451941865"));
+        mTeamList.add(new Developer("Ayush Gupta",
+                "",
+                "Scheduling Head","8505959587"));
+        mTeamList.add(new Developer("Gaurav Chaturvedi",
+                "",
+                "Sponsorship Head","9654986920"));
+        mTeamList.add(new Developer("Prashant Singh",
+                "",
+                "Security Head","9868406005"));
+        mTeamList.add(new Developer("Utkarsh Tomar",
+                "",
+                "Security Head","9958010964"));
+        mTeamList.add(new Developer("Mimanshi Tiwari",
+                "",
+                "Publicity Head","9717753296"));
+        mTeamList.add(new Developer("Ashwani Singh",
+                "",
+                "Merchandise Head","9717518241"));
+        mTeamList.add(new Developer("Manu Agnihotri",
+                "",
+                "Merchandise Head","9560337040"));
+        mTeamList.add(new Developer("Vaibhav Shukla",
+                "",
+                "Management Head","9818302918"));
+        mTeamList.add(new Developer("Aradhya Saxena",
+                "",
+                "Cultural Head","9971738740"));
+        mTeamList.add(new Developer("Rahul Giri",
+                "",
+                "Cultural Head","8447561809"));
+        mTeamList.add(new Developer("Sharmishtha Sharma",
+                "",
+                "Marketing Head","8587998387"));
+        mTeamList.add(new Developer("Abhinav Pandey",
+                "",
+                "Registration Head","0000000000"));
+        mTeamList.add(new Developer("Aditya Talwar",
+                "",
+                "Registration Head","0000000000"));
+        mTeamList.add(new Developer("Akash Solanki",
+                "",
+                "Resource Head","0000000000"));
     }
 
     @Override

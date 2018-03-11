@@ -121,6 +121,7 @@ public class EventDetailsActivity extends AppCompatActivity {
     eventLongDesc.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            eventLongDesc.setMaxLines(Integer.MAX_VALUE);
         }
     });
     callButton.setOnClickListener(new View.OnClickListener() {

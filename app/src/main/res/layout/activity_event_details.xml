@@ -245,7 +245,7 @@
                       android:textColor="@color/textColorPrimary"
                       android:textSize="16sp"
                       android:maxLines="8"
-                      android:ellipsize="marquee"
+                      android:ellipsize="end"
                       android:fontFamily="sans-serif"
                       />
 
