@@ -19,6 +19,7 @@
       android:fontFamily="@font/aref_ruqaa"
       android:lineSpacingExtra="12sp"
       android:text="Zealicon"
+      android:visibility="gone"
       android:textAllCaps="false"
       android:textAppearance="@style/TextAppearance.AppCompat.Large"
       android:textColor="@color/colorPrimaryDark"
@@ -33,7 +34,7 @@
   <ImageView
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:src="@drawable/zealicon"
+      android:src="@drawable/splash"
       android:padding="30dp"/>
 
 </android.support.constraint.ConstraintLayout>

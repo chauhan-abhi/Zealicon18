@@ -1,10 +1,13 @@
 package com.example.abhi.zealicon.recyclerview.adapters;
 
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,8 +15,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import com.example.abhi.zealicon.R;
+import com.example.abhi.zealicon.activities.MainActivity;
 import com.example.abhi.zealicon.model.Developer;
-import com.squareup.picasso.Picasso;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 import java.util.ArrayList;
 
@@ -75,14 +79,22 @@ public class DeveloperAdapter extends RecyclerView.Adapter<DeveloperAdapter.DevV
       }
     }
     else {
-      holder.profileImg.setImageResource(R.drawable.avatar);
+      holder.profileImg.setImageResource(R.drawable.aavatar);
     }
 
 
     holder.gitFab.setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View view) {
-        Log.v("onClick Fab",""+developer.getGitHub());
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(developer.getGitHub()));
+        Log.v("onClick Call Fab",""+developer.getMobNum());
+        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE)
+                != PackageManager.PERMISSION_GRANTED) {
+          // TODO: Consider calling
+          ActivityCompat.requestPermissions((MainActivity)context,
+                  new String[]{Manifest.permission.CALL_PHONE},
+                  0);
+          return;
+        }
+        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + developer.getMobNum()));
         context.startActivity(intent);
       }
     });

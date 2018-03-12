@@ -20,16 +20,39 @@ public class SponsorsFragment extends Fragment {
     private RecyclerView sponsorRecyclerView;
     private ArrayList<Developer> mSponsorList;
     String[] nameArray=new String[]{
-            "DuBeat",
-            "Coding Blocks",
-            "Coding Ninjas"
+            "Corporation Bank",
+            "IES Master",
+            "GateForum",
+            "Unique Shiksha",
+            "Hello Intern",
+            "DU Khabar",
+            "DU Express",
+            "DU Beat",
+            "The Education Tree",
+            "xoxoday",
+            "i3India Technologies",
+            "Smaash",
+            "KTM",
+            "CETPA",
+            "Coding Blocks"
 
     };
     String[] catArray=new String[]{
-            "DuBeat",
-            "Coding Blocks",
-            "Coding Ninjas"
-
+            "Title Sponsor",
+            "Education Sponsor",
+            "Education Sponsor",
+            "Education Sponsor",
+            "Media Sponsor",
+            "Media Sponsor",
+            "Media Sponsor",
+            "Media Sponsor",
+            "Media Sponsor",
+            "Experience Partner",
+            "Hacking Partner",
+            "Gaming Partner",
+            "Biking Partner",
+            "Training Partner",
+            "Technical Partner"
     };
     public static Fragment newInstance() {
         SponsorsFragment fragment = new SponsorsFragment();
@@ -45,8 +68,8 @@ public class SponsorsFragment extends Fragment {
 
     private void initSponsorData() {
         mSponsorList = new ArrayList<>();
-        for(int i=0;i<13;i++){
-            mSponsorList.add(new Developer("Corporation Bank","","Title Partner"));
+        for(int i=0;i<nameArray.length;i++){
+            mSponsorList.add(new Developer(nameArray[i],"",catArray[i]));
         }
     }
 

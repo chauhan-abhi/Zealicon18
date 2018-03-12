@@ -32,12 +32,14 @@ public class NotificationService extends IntentService {
 // build notification
         Log.v("work","work");
         String eventname=intent.getStringExtra("eventname");
+        String message=eventname+" is going to start. Make sure to be there.";
 // the addAction re-use the same intent to keep the example short
         NotificationCompat.Builder builder =
                 new NotificationCompat.Builder(this,"1")
                         .setSmallIcon(R.drawable.corpbank)
-                        .setContentTitle("Hurry up!")
-                        .setContentText(eventname+" is going to start in 15 minutes.Make sure to be there.");
+                        .setContentTitle("Hurry up!!!!")
+                        .setStyle(new NotificationCompat.BigTextStyle().bigText(message))
+                        .setContentText(message);
         int NOTIFICATION_ID = intent.getIntExtra("keynotify",1);
         Log.v("keynotify2",NOTIFICATION_ID+"");
         // SharedPreferences sf=getSharedPreferences("notify",0);

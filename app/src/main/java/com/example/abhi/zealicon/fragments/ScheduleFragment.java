@@ -112,9 +112,9 @@ public class ScheduleFragment extends Fragment {
                     }
                 }
 
-                innerDataList.add(new InnerData("CODERZ",12,"AB1",14));
-                innerDataList.add(new InnerData("Mechavoltz",13,"AB2",14));
-                innerDataList.add(new InnerData("Colaralo",15,"MPH",14));
+               // innerDataList.add(new InnerData("CODERZ",12,"AB1",14));
+               // innerDataList.add(new InnerData("Mechavoltz",13,"AB2",14));
+               // innerDataList.add(new InnerData("Colaralo",15,"MPH",14));
                 //innerData.add(new InnerData("Colaralo",16,"MPH",15));
                 //innerData.add(new InnerData("Colaralo",12,"MPH",16));
                 //innerData.add(new InnerData("Colaralo",13,"MPH",14));

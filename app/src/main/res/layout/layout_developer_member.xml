@@ -21,7 +21,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/avatar" />
+        app:srcCompat="@drawable/aavatar" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline5"

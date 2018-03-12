@@ -14,10 +14,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import com.example.abhi.zealicon.R;
-import com.example.abhi.zealicon.activities.EventDetailsActivity;
 import com.example.abhi.zealicon.activities.MainActivity;
 import com.example.abhi.zealicon.model.Developer;
-import com.squareup.picasso.Picasso;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 import java.util.ArrayList;
 
@@ -98,15 +97,15 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.TeamViewHolder
       else if(team.getImgurl().equals("vaibhav"))
         holder.profileImg.setImageResource(R.drawable.vaibhav);
       else
-        holder.profileImg.setImageResource(R.drawable.avatar);
+        holder.profileImg.setImageResource(R.drawable.aavatar);
     }
     else {
-      holder.profileImg.setImageResource(R.drawable.avatar);
+      holder.profileImg.setImageResource(R.drawable.aavatar);
     }
 
     holder.callFab.setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View view) {
-        Log.v("onClick Call Fab",""+team.getGitHub());
+        Log.v("onClick Call Fab",""+team.getMobNum());
           if (ActivityCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE)
                   != PackageManager.PERMISSION_GRANTED) {
               // TODO: Consider calling
@@ -115,7 +114,7 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.TeamViewHolder
                       0);
               return;
           }
-        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + team.getGitHub()));
+        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + team.getMobNum()));
         context.startActivity(intent);
       }
     });

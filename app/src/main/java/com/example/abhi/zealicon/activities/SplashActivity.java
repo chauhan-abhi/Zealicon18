@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -16,6 +17,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.abhi.zealicon.R;
+import com.example.abhi.zealicon.fragments.HomeFragment;
+
 import net.grandcentrix.tray.AppPreferences;
 
 import org.json.JSONArray;
@@ -30,7 +33,7 @@ import java.util.Date;
 public class SplashActivity extends AppCompatActivity {
 
   private static int SPLASH_TIME_OUT = 3000;
-
+  boolean openHome=false;
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_splash);
@@ -60,9 +63,12 @@ public class SplashActivity extends AppCompatActivity {
                   SharedPreferences sf = getSharedPreferences("firsttime", 0);
                   sf.edit().putInt("first", 1).apply();
                 }
-                Intent in =new Intent(getApplicationContext(),MainActivity.class);
-                startActivity(in);
-                finish();
+                if(!openHome) {
+                  openHome=true;
+                  Intent in = new Intent(getApplicationContext(), MainActivity.class);
+                  startActivity(in);
+                  finish();
+                }
 
               }
             },
@@ -71,8 +77,7 @@ public class SplashActivity extends AppCompatActivity {
               public void onErrorResponse(VolleyError error) {
                 //You can handle error here if you want
                 Log.v("MyApp",error.toString());
-                //Intent in=new Intent(getApplicationContext(),Retry.class);
-                //startActivity(in);
+                Toast.makeText(SplashActivity.this, "No Connectivity", Toast.LENGTH_LONG).show();
               }
             });
 
@@ -83,9 +88,13 @@ public class SplashActivity extends AppCompatActivity {
     //final RequestQueue requestQueue = Volley.newRequestQueue(this);
     new Handler().postDelayed(new Runnable() {
       @Override public void run() {
-        /*Intent i = new Intent(SplashActivity.this,MainActivity.class);
-        startActivity(i);
-        finish();*/
+        if(!openHome) {
+          openHome=true;
+          Intent in = new Intent(getApplicationContext(), MainActivity.class);
+          startActivity(in);
+          finish();
+        }
+        //finish();
       }
     },SPLASH_TIME_OUT);
   }
@@ -112,6 +121,11 @@ public class SplashActivity extends AppCompatActivity {
           calendar.setTime(date);
           int dateInt = calendar.get(Calendar.DATE);
           switch (dateInt) {
+            case 11:
+            case 12:
+            case 13:
+              day1Array.put(eventObject);
+              break;
             case 14:
               day1Array.put(eventObject);
               break;

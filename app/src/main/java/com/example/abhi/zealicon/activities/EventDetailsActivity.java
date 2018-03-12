@@ -2,6 +2,7 @@ package com.example.abhi.zealicon.activities;
 
 import android.Manifest;
 import android.app.AlarmManager;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
@@ -10,9 +11,11 @@ import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SwitchCompat;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.CompoundButton;
@@ -87,13 +90,13 @@ public class EventDetailsActivity extends AppCompatActivity {
             }
 
             eventName.setText(innerData.getEvent_name());
-            eventDesc.setText(innerData.getEvent_description());
+            eventDesc.setText(stripHtml(innerData.getEvent_description()));
             firstPrize.setText(innerData.getPrize1());
             secPrize.setText(innerData.getPrize2());
             contact.setText(innerData.getContact_name1() + " : " + innerData.getContact_num1() + "\n"
                     + innerData.getContact_name2() + " : " + innerData.getContact_num2());
-            rulesView.setText(innerData.getRules());
-            eventLongDesc.setText(innerData.getLong_des());
+            rulesView.setText(stripHtml(innerData.getRules()));
+            eventLongDesc.setText(stripHtml(innerData.getLong_des()));
 
             String outputStr = "";
             if (innerData.getTimings() != null) {
@@ -167,6 +170,7 @@ public class EventDetailsActivity extends AppCompatActivity {
                     bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, innerData.getEvent_name());
                     bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, innerData.getCategory());
                     mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
+
                 } else {
                     getSharedPreferences("notify", 0).edit()
                             .putInt(innerData.getEvent_name(), 0).apply();
@@ -182,13 +186,21 @@ public class EventDetailsActivity extends AppCompatActivity {
         PendingIntent sender = PendingIntent.getBroadcast(this, id, intent, PendingIntent.FLAG_ONE_SHOT);
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
         alarmManager.cancel(sender);
+        sender.cancel();
         getSharedPreferences("notify", 0).edit()
                 .putInt(innerData.getEvent_name(), 0)
                 .apply();
     }
+    public String stripHtml(String html) {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            return Html.fromHtml(html, Html.FROM_HTML_MODE_LEGACY).toString();
+        } else {
+            return Html.fromHtml(html).toString();
+        }
+    }
 
     private void notifyme() {
-        String toParse = "2018-03-11 22:28:00"; // Results in "2-5-2012 20:43"
+        String toParse = innerData.getTimings(); // Results in "2-5-2012 20:43"
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss"); // I assume d-M, you may refer to M-d for month-day instead.
         Date date = new Date(); // You will need try/catch around this
         try {
@@ -205,12 +217,15 @@ public class EventDetailsActivity extends AppCompatActivity {
         intent.putExtra("eventname", innerData.getEvent_name());
         Log.v("keynotify1", notificationid + "");
 
-
         PendingIntent pi = PendingIntent.getBroadcast(getApplicationContext(), notificationid, intent, PendingIntent.FLAG_ONE_SHOT);
         sf.edit().putInt("key", notificationid + 1).apply();
         AlarmManager am = (AlarmManager) getApplicationContext().getSystemService(Context.ALARM_SERVICE);
-        am.set(AlarmManager.RTC_WAKEUP, millis - 900000, pi);
+        am.set(AlarmManager.RTC_WAKEUP, millis-3600000, pi);
+        AlarmManager am2 = (AlarmManager) getApplicationContext().getSystemService(Context.ALARM_SERVICE);
+        am2.set(AlarmManager.RTC_WAKEUP, millis-900000, pi);
     }
+
+
 
     private void settextstyle(TextView tv1) {
         Typeface custom_font = Typeface.createFromAsset(getApplicationContext().getAssets(), "font/huggable.ttf");

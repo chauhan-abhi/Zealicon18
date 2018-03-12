@@ -54,11 +54,11 @@ public class Developer {
     this.position = position;
   }
 
-  public String getGitHub() {
+  public String getMobNum() {
     return mobNum;
   }
 
-  public void setGitHub(String mobNum) {
+  public void setMobNum(String mobNum) {
     this.mobNum = mobNum;
   }
 
