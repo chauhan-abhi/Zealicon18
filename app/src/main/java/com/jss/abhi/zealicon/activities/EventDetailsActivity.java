@@ -94,7 +94,7 @@ public class EventDetailsActivity extends AppCompatActivity {
             secPrize.setText(innerData.getPrize2());
             contact.setText(innerData.getContact_name1() + " : " + innerData.getContact_num1() + "\n"
                     + innerData.getContact_name2() + " : " + innerData.getContact_num2());
-            rulesView.setText(stripHtml(innerData.getRules()));
+            rulesView.setText(stripHtml(innerData.getRules().substring(2,innerData.getRules().length()-2)));
             eventLongDesc.setText(stripHtml(innerData.getLong_des()));
 
             String outputStr = "";
