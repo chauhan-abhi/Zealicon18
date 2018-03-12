@@ -13,14 +13,14 @@ public class Developer {
   private String imgurl;
   private String position;
   /*********This field is contact no for team and github url for developer************/
-  private String gitHub;
+  private String mobNum;
 
   //Constructor for Developer and Team members
-  public Developer(String name, String imgurl, String position, String gitHub) {
+  public Developer(String name, String imgurl, String position, String mobNum) {
     this.name = name;
     this.imgurl = imgurl;
     this.position = position;
-    this.gitHub = gitHub;
+    this.mobNum = mobNum;
   }
 
   //Constructor for sponsors
@@ -55,11 +55,11 @@ public class Developer {
   }
 
   public String getGitHub() {
-    return gitHub;
+    return mobNum;
   }
 
-  public void setGitHub(String gitHub) {
-    this.gitHub = gitHub;
+  public void setGitHub(String mobNum) {
+    this.mobNum = mobNum;
   }
 
 

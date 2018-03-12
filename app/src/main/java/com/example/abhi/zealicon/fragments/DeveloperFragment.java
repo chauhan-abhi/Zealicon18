@@ -32,9 +32,9 @@ public class DeveloperFragment extends Fragment {
     public void initDeveloperData(){
         developerArrayList = new ArrayList<>();
         developerArrayList.add(new Developer("Abhishek Singhania","mrsinghania",
-                    "4th yr CSE","https://github.com/singhania1408"));
+                    "4th yr CSE","9643156229"));
         developerArrayList.add(new Developer("Abhijeet","abhijeet",
-                "3rd yr CSE","https://github.com/chauhan-abhi"));
+                "3rd yr CSE","9990649248"));
 
     }
 

@@ -14,6 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import com.example.abhi.zealicon.R;
+import com.example.abhi.zealicon.activities.EventDetailsActivity;
+import com.example.abhi.zealicon.activities.MainActivity;
 import com.example.abhi.zealicon.model.Developer;
 import com.squareup.picasso.Picasso;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -105,18 +107,15 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.TeamViewHolder
     holder.callFab.setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View view) {
         Log.v("onClick Call Fab",""+team.getGitHub());
+          if (ActivityCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE)
+                  != PackageManager.PERMISSION_GRANTED) {
+              // TODO: Consider calling
+              ActivityCompat.requestPermissions((MainActivity)context,
+                      new String[]{Manifest.permission.CALL_PHONE},
+                      0);
+              return;
+          }
         Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + team.getGitHub()));
-        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE)
-            != PackageManager.PERMISSION_GRANTED) {
-          // TODO: Consider calling
-          //    ActivityCompat#requestPermissions
-          // here to request the missing permissions, and then overriding
-          //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-          //                                          int[] grantResults)
-          // to handle the case where the user grants the permission. See the documentation
-          // for ActivityCompat#requestPermissions for more details.
-          return;
-        }
         context.startActivity(intent);
       }
     });

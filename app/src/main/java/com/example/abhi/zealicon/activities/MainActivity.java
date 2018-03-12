@@ -1,8 +1,13 @@
 package com.example.abhi.zealicon.activities;
 
 
+import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.support.constraint.ConstraintLayout;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 
 import android.support.annotation.ColorInt;
@@ -91,7 +96,7 @@ public class MainActivity extends AppCompatActivity  {
                     case R.id.info:
                         position=3;
                         selectedFragment= InfoFragment.newInstance();
-                        activityMain.setBackgroundResource(R.drawable.schedule_back);
+                        activityMain.setBackgroundResource(R.drawable.info_bg);
                         Log.v(TAG,"Info Fragment Selected");
                         break;
                     case R.id.schedule:
@@ -172,6 +177,27 @@ public class MainActivity extends AppCompatActivity  {
 
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case 0: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                } else {
+
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+                }
+                return;
+            }
+
+            // other 'case' lines to check for other
+            // permissions this app might request.
+        }
+    }
 
 }
 

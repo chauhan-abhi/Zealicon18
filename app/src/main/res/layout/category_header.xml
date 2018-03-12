@@ -4,19 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/trans"
+    android:background="@color/skycolor"
     >
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/trans"
         >
 
         <View
             android:id="@+id/header_middle"
             android:layout_width="0dp"
-            android:layout_height="70dp"
+            android:layout_height="80dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
             android:background="@drawable/daycloud"

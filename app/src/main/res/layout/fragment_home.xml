@@ -38,6 +38,7 @@
         android:layout_height="50dp"
         android:src="@drawable/tweety"
         android:id="@+id/tweety"
+        android:scaleType="centerCrop"
         android:layout_marginTop="20dp"
 
         />
@@ -45,7 +46,7 @@
         android:id="@+id/timon"
         android:layout_width="140dp"
         android:layout_height="90dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="35dp"
         android:layout_alignParentEnd="true"
         android:src="@drawable/timon" />
 
@@ -55,6 +56,12 @@
         android:src="@drawable/zealicon"
         android:padding="15dp"
         />
+      <pl.droidsonroids.gif.GifImageView
+          android:id="@+id/belowGif"
+          android:layout_width="140dp"
+          android:layout_height="90dp"
+          android:layout_alignParentBottom="true"
+          android:src="@drawable/chipmunk" />
 
   </RelativeLayout>
 

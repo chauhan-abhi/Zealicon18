@@ -1,7 +1,6 @@
 package com.example.abhi.zealicon.recyclerview.adapters;
 
 import android.content.Context;
-import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.abhi.zealicon.R;
 import com.example.abhi.zealicon.model.Developer;
-import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 /**
@@ -21,6 +20,22 @@ public class SponsorAdapter extends RecyclerView.Adapter<SponsorAdapter.SponsorV
 
   private Context context;
   private ArrayList<Developer> mSponsorList;
+  int[] sponsorResArray=
+          new int[]{
+                  R.drawable.cetpa,
+                  R.drawable.ducat,
+                  R.drawable.cb,
+                  R.drawable.dub,
+                  R.drawable.dukhabar,
+                  R.drawable.ies,
+                  R.drawable.ktmlogo,
+                  R.drawable.smaash,
+                  R.drawable.upsc,
+                  R.drawable.gateforum,
+                  R.drawable.theeducationtree,
+                  R.drawable.i3indian,
+                  R.drawable.download,
+          };
 
   public class SponsorViewHolder extends RecyclerView.ViewHolder {
 
@@ -45,15 +60,9 @@ public class SponsorAdapter extends RecyclerView.Adapter<SponsorAdapter.SponsorV
     final Developer sponsor = mSponsorList.get(position);
     holder.name.setText(sponsor.getName());
     holder.position.setText(sponsor.getPosition());
-    if(!(sponsor.getImgurl().isEmpty() || sponsor.getImgurl() == null)) {
-      Picasso.with(context)
-          .load(Uri.parse(sponsor.getImgurl()))
-          .placeholder(R.mipmap.ic_launcher_round)
-          .into(holder.profileImg);
-    }
-    else {
-      holder.profileImg.setImageResource(R.drawable.corpbank);
-    }
+      holder.profileImg.setImageResource(sponsorResArray[position]);
+//      holder.profileImg.setImageResource(R.drawable.corpbank);
+
 
   }
 

@@ -14,14 +14,14 @@
     <FrameLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="60dp">
+        android:layout_height="wrap_content">
 
         <include layout="@layout/category_header"/>
 
         <View
             android:id="@+id/header_alpha"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="80dp"
             android:background="@drawable/white_corners"
             android:alpha="0"/>
 

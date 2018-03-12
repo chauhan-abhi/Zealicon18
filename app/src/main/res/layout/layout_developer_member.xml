@@ -76,11 +76,12 @@
         android:layout_marginTop="8dp"
         android:clickable="true"
         app:fabSize="mini"
-        app:backgroundTint="@android:color/white"
+        app:backgroundTint="@android:color/holo_blue_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline6"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_github_logo_24dp" />
+        app:srcCompat="@drawable/ic_call_white_24dp"
+        />
 
 </android.support.constraint.ConstraintLayout>
