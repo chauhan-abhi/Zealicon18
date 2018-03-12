@@ -31,8 +31,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.jss.abhi.zealicon.activities.ZealIDActivity" />
-        <activity android:name="com.jss.abhi.zealicon.activities.EventDetailsActivity" />
+      <activity android:name="com.jss.abhi.zealicon.activities.EventDetailsActivity" />
 
         <service
             android:name="com.jss.abhi.zealicon.service.NotificationService"

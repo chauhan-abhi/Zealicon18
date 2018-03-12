@@ -3,6 +3,7 @@ package com.jss.abhi.zealicon.fragments;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,7 +13,7 @@ import android.view.ViewGroup;
 
 import android.widget.ImageView;
 import com.jss.abhi.zealicon.R;
-
+import java.util.List;
 
 public class AboutUsFragment extends Fragment {
 
@@ -55,6 +56,20 @@ public class AboutUsFragment extends Fragment {
 
         // insta click listner
         //TODO
+        instaImage.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View view) {
+                Uri uri = Uri.parse("https://instagram.com/zealicon/");
+                Intent insta = new Intent(Intent.ACTION_VIEW, uri);
+                insta.setPackage("com.instagram.android");
+                if (isIntentAvailable(context, insta)){
+                    startActivity(insta);
+                } else{
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://instagram.com/zealicon")));
+                }
+
+
+            }
+        });
 
         youtubeImage.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View view) {
@@ -64,6 +79,12 @@ public class AboutUsFragment extends Fragment {
         });
 
         return view;
+    }
+
+    private boolean isIntentAvailable(Context context, Intent insta) {
+        final PackageManager packageManager = context.getPackageManager();
+        List<ResolveInfo> list = packageManager.queryIntentActivities(insta, PackageManager.MATCH_DEFAULT_ONLY);
+        return list.size() > 0;
     }
 
     public String getFacebookPageURL(Context context) {
