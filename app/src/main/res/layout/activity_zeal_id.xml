@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.abhi.zealicon.activities.ZealIDActivity"
+    tools:context="com.jss.abhi.zealicon.activities.ZealIDActivity"
     >
   <TextView
       android:id="@+id/textView5"

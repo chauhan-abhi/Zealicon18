@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:scrollbarAlwaysDrawVerticalTrack="true"
-    tools:context="com.example.abhi.zealicon.fragments.RegisterFragment"
+    tools:context="com.jss.abhi.zealicon.fragments.RegisterFragment"
     >
 
     <LinearLayout
