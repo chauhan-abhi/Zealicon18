@@ -42,8 +42,7 @@ public class ScheduleFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        ParsingEvents parsingEvents=new ParsingEvents();
-        parsingEvents.execute();
+
     }
 
     @Override
@@ -52,7 +51,11 @@ public class ScheduleFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_schedule, container, false);
         rv = view.findViewById(R.id.daysRecyclerView);
+        /*ParsingEvents parsingEvents=new ParsingEvents();
+        parsingEvents.execute();*/
+        parseJSON();
         initRecyclerView(outerData);
+
         return view;
     }
 
@@ -64,6 +67,58 @@ public class ScheduleFragment extends Fragment {
         new TailSnapHelper().attachToRecyclerView(rv);
     }
 
+    void parseJSON() {
+        SharedPreferences s = getContext().getSharedPreferences("events", 0);
+        String day1array = s.getString(getString(R.string.day1events), getString(R.string.default_str));
+        String day2array = s.getString(getString(R.string.day2events), getString(R.string.default_str));
+        String day3array = s.getString(getString(R.string.day3events), getString(R.string.default_str));
+        String day4array = s.getString(getString(R.string.day4events), getString(R.string.default_str));
+        for (int i = 0; i < OUTER_COUNT; i++) {
+            JSONArray jsonArray = new JSONArray();
+            try {
+                switch (i) {
+                    case 0:
+                        jsonArray = new JSONArray(day1array);
+                        break;
+                    case 1:
+                        jsonArray = new JSONArray(day2array);
+                        break;
+                    case 2:
+                        jsonArray = new JSONArray(day3array);
+                        break;
+                    case 3:
+                        jsonArray = new JSONArray(day4array);
+                        break;
+                    default:
+                        jsonArray = new JSONArray();
+                        break;
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            List<InnerData> innerDataList = new ArrayList<>();
+            for (int j = 0; j < jsonArray.length(); j++) {
+                InnerData innerData = new InnerData();
+                try {
+                    innerData = Jsonparser.toObject(jsonArray.getJSONObject(j).toString());
+                    innerDataList.add(innerData);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            // innerDataList.add(new InnerData("CODERZ",12,"AB1",14));
+            // innerDataList.add(new InnerData("Mechavoltz",13,"AB2",14));
+            // innerDataList.add(new InnerData("Colaralo",15,"MPH",14));
+            //innerData.add(new InnerData("Colaralo",16,"MPH",15));
+            //innerData.add(new InnerData("Colaralo",12,"MPH",16));
+            //innerData.add(new InnerData("Colaralo",13,"MPH",14));
+            //innerData.add(new InnerData("Colaralo",15,"MPH",15));
+
+            outerData.add(innerDataList);
+
+        }
+    }
     public class ParsingEvents extends AsyncTask<Void, Void, String> {
         HttpURLConnection conn;
         BufferedReader bufferedReader;

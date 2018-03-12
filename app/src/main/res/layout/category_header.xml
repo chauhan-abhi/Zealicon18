@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/skycolor"
+    android:layout_height="70dp"
+    android:background="@drawable/plank"
     >
 
     <android.support.constraint.ConstraintLayout
@@ -15,7 +15,7 @@
         <View
             android:id="@+id/header_middle"
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="70dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
             app:layout_constraintHorizontal_bias="0.0"

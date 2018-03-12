@@ -32,6 +32,7 @@
       android:gravity="top"
       >
 
+<!--
 
     <pl.droidsonroids.gif.GifImageView
         android:layout_width="80dp"
@@ -49,19 +50,20 @@
         android:layout_marginTop="35dp"
         android:layout_alignParentEnd="true"
         android:src="@drawable/timon" />
+-->
 
-   <ImageView
+     <!-- <pl.droidsonroids.gif.GifImageView
+          android:id="@+id/belowGif"
+          android:layout_width="140dp"
+          android:layout_height="90dp"
+          android:layout_alignParentBottom="true"
+          android:src="@drawable/chipmunk" />-->
+      <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/zealicon"
         android:padding="15dp"
         />
-      <pl.droidsonroids.gif.GifImageView
-          android:id="@+id/belowGif"
-          android:layout_width="140dp"
-          android:layout_height="90dp"
-          android:layout_alignParentBottom="true"
-          android:src="@drawable/chipmunk" />
 
   </RelativeLayout>
 

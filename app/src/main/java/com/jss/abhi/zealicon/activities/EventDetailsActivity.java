@@ -41,6 +41,7 @@ public class EventDetailsActivity extends AppCompatActivity {
     private ImageButton callButton;
     private ImageView catIconView;
     InnerData innerData;
+    boolean detail=true;
     private SwitchCompat interestedSwitch, goingSwitch;
 
     private FirebaseAnalytics mFirebaseAnalytics;
@@ -126,7 +127,11 @@ public class EventDetailsActivity extends AppCompatActivity {
         eventLongDesc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                eventLongDesc.setMaxLines(Integer.MAX_VALUE);
+                detail=!detail;
+                if(detail)
+                    eventLongDesc.setMaxLines(Integer.MAX_VALUE);
+                else
+                    eventLongDesc.setMaxLines(8);
             }
         });
         callButton.setOnClickListener(new View.OnClickListener() {
