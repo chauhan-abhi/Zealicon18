@@ -35,6 +35,9 @@ public class DeveloperFragment extends Fragment {
                     "4th yr CSE","9643156229"));
         developerArrayList.add(new Developer("Abhijeet","abhijeet",
                 "3rd yr CSE","9990649248"));
+        developerArrayList.add(new Developer("Shubhangi", "shubhangi",
+                        "3rd yr CSE", "7838130426"));
+
 
     }
 
